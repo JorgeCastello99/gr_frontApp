@@ -1,0 +1,134 @@
+.container {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  display: flex;
+  height: 100%;
+  .tab-container {
+    width: 25%;
+    .tabmr {
+      margin: 60px 10%;
+      .tab {
+        border-radius: 15px;
+        padding: 18px 20px;
+        margin: 40px 0;
+
+        a {
+          width: 100% !important;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          color: rgb(114, 114, 114);
+          text-decoration: none;
+          font-weight: 600;
+          .texts {
+            display: block;
+            p {
+              margin-bottom: 0;
+            }
+          }
+          .dot {
+            margin-right: 0;
+            margin-left: auto;
+            height: 20px;
+            width: 20px;
+            background-color: #49d9be;
+            border: 3px solid #fff;
+            box-shadow: 0 0 2px #49d9be;
+            border-radius: 50%;
+            display: inline-block;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+  }
+  .rout-orient {
+    width: 75%;
+  }
+}
+.active-link {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 0px 11px -2px rgba(107, 107, 107, 0.54);
+  a {
+    color: black !important;
+    .dot {
+      visibility: visible !important;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .container {
+  .tab-container {
+    .tabmr {
+      margin: 60px 7%;
+      .tab {
+        font-size: 14px;
+      }
+    }
+  }
+
+}
+}
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    .tab-container {
+      width: 100%;
+      .tabmr {
+        margin: 0 3%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .tab {
+          padding: 18px 20px;
+          margin: 30px 0;
+          width: 33%;
+          a {
+            .texts {
+              margin-right: 2%;
+            }
+          }
+        }
+      }
+    }
+    .rout-orient {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    .tab-container {
+      width: 100%;
+      .tabmr {
+        margin: 10px 3%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .tab {
+          padding: 18px 20px;
+          margin: 30px 0;
+          width: 33%;
+          a {
+            .texts {
+              margin-right: 2%;
+            }
+            .dot {
+            height: 17px;
+            }
+          }
+        }
+      }
+    }
+    .rout-orient {
+      width: 100%;
+    }
+  }
+}

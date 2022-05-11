@@ -1,0 +1,35 @@
+<div class="container">
+  <img src="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png" alt="">
+  <div class="card">
+    <div [ngSwitch]="num" class="opt">
+      <div class="email-container" *ngSwitchCase="1">
+        <h4>Encuentra tu cuenta de GrowthRoad</h4>
+        <p>Te enviaremos un correo con un código que tendrás que insertar a continuación.</p>
+        <span>{{emailError}}</span>
+        <input [(ngModel)]="email" placeholder="Introduce tu correo electrónico">
+        <button (click)="sendEmail()">Enviar email</button>
+      </div>
+      <div class="email-container" *ngSwitchCase="2">
+        <h4>Verificación de código</h4>
+        <span (click)="resend()">Sino recibes el correo pulsa aquí para que te reenviemos el código.</span>
+        <span>{{emailError}}</span>
+        <input [(ngModel)]="code" placeholder="Introduce el código">
+        <button (click)="checkCode()">Comprobar</button>
+      </div>
+      <div class="email-container" *ngSwitchCase="3">
+        <!-- Hay que cambiar lo de abajo por dos inputs para las passwd -->
+        <h4>Nuevas contraseñas</h4>
+        <div class="pwd">
+          <input [(ngModel)]="pwd1" [type]="pwdVis1 ? 'text' : 'password'" placeholder="Introduce la nueva contraseña">
+          <button (click)="toggleVisibility(1)"><img src="https://grapi.growthroad.es:5555/img?imgRef=eye&ext=png" alt=""></button>
+        </div>
+        <div class="pwd">
+          <input [(ngModel)]="pwd2" [type]="pwdVis2 ? 'text' : 'password'" placeholder="Repite la nueva contraseña">
+          <button (click)="toggleVisibility(2)"><img src="https://grapi.growthroad.es:5555/img?imgRef=eye&ext=png" alt=""></button>
+        </div>
+        <span class="lastspan">{{emailError}}</span>
+        <button (click)="postPwd()">Actualizar contraseña</button>
+      </div>
+    </div>
+  </div>
+</div>

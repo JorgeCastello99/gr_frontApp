@@ -1,0 +1,233 @@
+.containerc{
+  margin: 40px 70px;
+
+  height: 80vh;
+  background-color: rgb(189, 189, 189);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  P{
+    font-size: 55px;
+    //animation:spin 0.3s linear normal;
+
+  }
+}
+
+// @-moz-keyframes spin {
+//   100% { -moz-transform: rotate(360deg); }
+// }
+// @-webkit-keyframes spin {
+//   100% { -webkit-transform: rotate(360deg); }
+// }
+// @keyframes spin {
+//   100% {
+//       -webkit-transform: rotate(360deg);
+//       transform:rotate(360deg);
+//   }
+// }
+
+
+// .container{
+//   width: 100%;
+//   .sub-container{
+//     text-align: center;
+//     margin-top: 30px;
+//     .btn-container{
+//       display: block;
+//       width: 27%;
+//       margin: 0 auto;
+//       button{
+//         margin-top: 20px;
+//         width: 100%;
+//         padding-top: 5px;
+//         padding-bottom: 5px;
+//       }
+//     }
+//     .students-container{
+//       margin-top: 40px;
+//       ul{
+//         margin: 0 auto;
+//         width: 90%;
+//         justify-content: space-evenly;
+
+//         .nav-item{
+//           position: relative;
+//           .nav-link{
+//             color: black;
+//           }
+//           .click{
+//             position: absolute;
+//             top: 0;
+//             right: 0;
+//             font-size: 12px;
+//             cursor: pointer;
+//             border-radius: 15px;
+//             width: fit-content;
+//             height: fit-content;
+//             padding: 1px 5px;
+//             &:hover{
+//               background-color: rgb(255, 0, 0);
+//             }
+//             color:#ffffff41;
+//           }
+//         }
+//       }
+//       .item-container{
+//         display: flex;
+//         margin-top: 30px;
+//         text-align: left;
+//         .students{
+//           width: 100%;
+//           margin: 0 auto;
+//           .heads{
+//             display: flex;
+//             width: 80%;
+//             margin: 15px auto;
+//             .name{
+//               margin-left: 3%;
+//               width: 25%;
+//             }
+//             .lic{
+//               width: 5%;
+//             }
+//             .ema{
+//               width: 45%;
+//             }
+//             .con{
+//               width: 25%;
+//             }
+//           }
+//           .student{
+//             margin-top: 10px;
+//             width: 80%;
+//             margin: 15px auto;
+//            .scontainer{
+//             width: 100%;
+//             display: flex;
+//             align-items: center;
+//             border-bottom: 1px solid rgba(135, 135, 135, 0.539);
+//             color: black;
+//             .name{
+//               margin-left: 3%;
+//               width: 25%;
+//             }
+//             .email{
+//               width: 45%;
+//             }
+//             .license{
+//               width: 5%;
+//             }
+//             .controls{
+//               width: 25%;
+//               display: flex;
+//               button{
+//                 width: 100%;
+//                 margin: auto;
+//                 padding: 0;
+//               }
+//               .perf{
+//                 background-color: blue;
+//               }
+//               .del{
+//                 color: white;
+//                 background-color: red;
+//               }
+//               .lic{
+//                 background-color: greenyellow;
+//               }
+//             }
+//             &:hover{
+//               background-color: rgba(188, 188, 188, 0.503);
+//             }
+//            }
+//             p{
+//               margin-bottom: 0;
+//               padding-bottom: 2px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// .active{
+//   border-bottom: 1px solid black;
+//   font-weight: 600;
+// }
+
+
+
+
+// .modal-body{
+
+//   .selectgrad{
+//    display: flex;
+//    align-items: center;
+//    p{
+//     margin-bottom: 0;
+//     width: 80%;
+//   }
+//   .gl{
+//     margin-right: 0;
+//     margin-left: auto;
+//   }
+//   select{
+//     width: 15%;
+//     margin-right: 0;
+//     margin-left: auto;
+//   }
+//   }
+//   .addT{
+//     .err{
+//       color: red;
+//     }
+//     input{
+//       width: 90%;
+//     }
+//     button{
+//       width: 10%;
+//     }
+//     .select-container{
+//       display: flex;
+//       justify-content: space-evenly;
+//       p{
+//         margin-bottom: 0;
+//         color: red;
+//       }
+//       .letter{
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         p{
+//           margin-bottom: 0;
+//           margin-right: 10px;
+//           color: black;
+//         }
+//       }
+//     }
+//     .addg{
+//       margin-top: 10px;
+//       width: 30%;
+//       float: right;
+//       margin-bottom: 10px;
+//     }
+//   }
+//   .result{
+//     button{
+//       margin-top: 10px;
+//       float: right;
+//       padding: 5px 10px;
+//       border-radius: 15px;
+//     }
+//     .elim{
+//       border: 1px solid rgb(57, 0, 0);
+//       background-color: red;
+//       color: white;
+//     }
+//     .send{
+//       border: 1px solid rgb(10, 62, 0);
+//       background-color: rgba(21, 255, 0, 0.612);
+//     }
+//   }
+
+// }

@@ -1,0 +1,1132 @@
+.container {
+  border-radius: 15px;
+  background-color: rgb(231, 240, 255);
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .containertop {
+    display: flex;
+    width: 90%;
+    max-width: 90%;
+    height: 50%;
+    margin: 20px;
+    justify-content: center;
+
+    .container-progress {
+      width: 66%;
+      height: auto;
+      border-radius: 20px;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: -5px -5px 30px 10px rgb(0 0 0 / 5%);
+      animation-duration: 0.6s;
+            animation-name: animate-fade;
+            animation-delay: 0.1s;
+            animation-fill-mode: both;
+
+      .container-progress-v {
+        width: 20%;
+        margin: 20px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+
+        p {
+          text-align: center;
+          font-size: 20px;
+        }
+
+        .circle {
+          width: fit-content !important;
+          height: 50% !important;
+          margin: 0 auto;
+        }
+
+        .ppro {
+          text-align: left;
+          color: rgb(167, 167, 167);
+          margin: 10px;
+          font-size: 12px;
+          margin: 5px;
+          margin-left: 15px;
+        }
+      }
+
+      .container-progresscap {
+        box-shadow: -5px 0px 5px 0px rgb(0 0 0 / 10%);
+        width: 75%;
+        height: 100%;
+        border-radius: 20px;
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .frame-caps {
+
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          .pcaps {
+            width: 90%;
+            justify-content: left;
+            align-items: center;
+
+            .caps {
+              width: auto;
+              margin-bottom: 0%;
+              font-size: 12px;
+              justify-content: center;
+              align-items: center;
+              display: flex;
+              color: rgb(114, 114, 114);
+              text-decoration: none;
+              font-weight: 600;
+
+              .pc {
+                text-align: center;
+                margin: 8px;
+              }
+              .frame-bar {
+                width: 30%;
+                margin-right: 20px;
+                margin-left: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .bar-capsprogress {
+                  background: rgba(136, 146, 141, 0.507);
+                  border-radius: 100px;
+                  position: relative;
+                  display: flex;
+                  height: 6px;
+                  width: 150px;
+                  margin-top: 19px;
+                  margin-bottom: 20px;
+
+                  .bar {
+                    height: 6px;
+                    border-radius: 100px;
+                  }
+                }
+              }
+            }
+          }
+
+        }
+
+        .frame-tv {
+          width: 85%;
+          justify-content: center;
+          align-items: center;
+          margin-top: 5px;
+          margin-bottom: 10px;
+          margin-left: 7%;
+
+          .tv {
+            width: auto;
+            justify-content: left;
+            display: flex;
+            color: rgb(10, 9, 9);
+            font-size: 18px;
+            margin-bottom: 2px;
+          }
+
+          .tvt {
+            color: rgb(114, 114, 114);
+            width: auto;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    // .container-activity {
+    //   display: none;
+    //   width: 38%;
+    //   height: auto;
+    //   border-radius: 20px;
+    //   background-color: white;
+    //   .activity {
+    //     margin: 20px 20px 10px 25px;
+    //   }
+    // }
+  }
+
+  .container-statistics {
+    width: 90%;
+    margin: 20px 0;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .container-stop {
+      margin: 15px;
+      justify-content: left;
+      width: 100%;
+      display: flex;
+      align-items: baseline;
+
+      .p-statistics {
+        display: flex;
+        align-items: baseline;
+        width: 50%;
+        margin: 15px 0 0 5%;
+        .p1 {
+          font-size: 26px;
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+        .p2 {
+          font-size: 12px;
+          color: #a7a7a7;
+          margin: 0;
+          margin-left: 10px;
+        }
+      }
+      .container-bar-evolution {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .p-evolution {
+          font-size: 13px;
+          color: #474646;
+          margin-right: 4%;
+          margin-left: auto;
+        }
+        .frame-bar-evolution {
+          margin-right: 8%;
+          width: 60%;
+          justify-content: left;
+          align-items: center;
+          display: flex;
+          .bar-evolution {
+            background: rgba(115, 133, 124, 0.507);
+            border-radius: 100px;
+            position: relative;
+            display: flex;
+            height: 6px;
+            width: 90%;
+            margin-top: 19px;
+            margin-bottom: 19px;
+            .bar-e {
+              height: 6px;
+              border-radius: 100%;
+            }
+          }
+        }
+      }
+    }
+    .container-sbot {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .cont {
+        width: 32%;
+        max-width: 33%;
+        min-width: 33%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 5px;
+        height: auto;
+        .frame-chart {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 200px;
+          canvas {
+            animation-duration: 0.3s;
+            animation-name: animate-fade;
+            animation-delay: 0.3s;
+            animation-fill-mode: both;
+          }
+        }
+
+        .frame-p-info {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 15px;
+          position: relative;
+          p {
+            text-align: center;
+            margin-top: 0%;
+            margin-bottom: 0%;
+          }
+
+          .info {
+            cursor: help;
+
+            img {
+              margin-left: 5px;
+              width: 15px;
+              padding-bottom: 3px;
+            }
+            .txt-inf {
+              visibility: hidden;
+              position: absolute;
+              bottom: -55%;
+              right: -30%;
+              left: 100%;
+              top: 100%;
+              word-wrap: break-word;
+              width: 170px;
+              z-index: 99;
+              p {
+                text-align: left;
+                padding: 12px 10px;
+                border: 1px solid rgb(181, 196, 184);
+                background-color: rgb(244, 254, 246);
+                box-shadow: 5px 5px 10px 5px rgba(179, 179, 179, 0.664);
+                font-size: 13px;
+              }
+            }
+            &:hover {
+              .txt-inf {
+                visibility: visible;
+              }
+            }
+          }
+        }
+        &.aptitudes {
+        }
+        &.personalidad {
+          .frame-chart {
+            canvas {
+              width: 93% !important;
+              height: 93% !important;
+            }
+          }
+        }
+
+        &.intereses {
+          .frame-chart {
+            canvas {
+              width: 92% !important;
+              height: 92% !important;
+            }
+          }
+        }
+
+        &.multiples {
+          .frame-chart {
+            canvas {
+              height: auto !important;
+            }
+          }
+        }
+        &.emocional {
+          .frame-chart {
+            canvas {
+              margin-right: -30px;
+              width: 97% !important;
+              height: 79% !important;
+            }
+          }
+        }
+        &.aprendizaje {
+          .frame-chart {
+            canvas {
+              width: 80% !important;
+              height: 84% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+    filter: blur(15px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+//RESPONSIVE
+@media (max-width: 1185px) {
+  .container {
+    .containertop {
+      .container-progress {
+        width: 80%;
+        .container-progress-v {
+          width: 20%;
+          p {
+            font-size: 19px;
+          }
+          .circle {
+            height: 47% !important;
+          }
+          .ppro {
+            font-size: 11px;
+            margin-left: 13px;
+          }
+        }
+        .container-progresscap {
+          width: 78%;
+          .frame-caps {
+            width: 92%;
+            .pcaps {
+              .caps {
+                font-size: 12px;
+                .frame-bar {
+                  width: 28%;
+                }
+              }
+            }
+          }
+          .frame-tv {
+            .tv {
+              font-size: 17px;
+            }
+            .tvt {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+
+      // .container-activity {
+      //   display: none;
+      //   width: 38%;
+      //   height: auto;
+      //   border-radius: 20px;
+      //   background-color: white;
+      //   .activity {
+      //     margin: 20px 20px 10px 25px;
+      //   }
+      // }
+    }
+
+    .container-statistics {
+      width: 90%;
+      .container-stop {
+        margin-bottom: 0;
+        .p-statistics {
+          .p1 {
+            font-size: 24px;
+          }
+          .p2 {
+            font-size: 11px;
+            margin-left: 6px;
+          }
+        }
+        .container-bar-evolution {
+          .p-evolution {
+            text-align: right;
+            font-size: 12px;
+            width: 30%;
+            margin-left: auto;
+            margin-right: 3%;
+          }
+          .frame-bar-evolution {
+            margin-left: 0%;
+            width: 40%;
+            .bar-evolution {
+              width: 85%;
+            }
+          }
+        }
+      }
+      .container-sbot {
+        width: 94%;
+        align-items: center;
+        justify-content: center;
+        .cont {
+          padding: 20px 0px;
+          width: 46%;
+          max-width: 46%;
+          min-width: 46%;
+          .frame-chart {
+            height: 230px;
+          }
+          .frame-p-info {
+            margin-bottom: 10px;
+            p {
+              font-size: 15px;
+            }
+            .info {
+              img {
+                width: 13px;
+              }
+              .txt-inf {
+                width: 160px;
+                p {
+                  padding: 10px 11px;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+        &.aptitudes {
+        }
+        &.personalidad {
+          .frame-chart {
+            canvas {
+              width: 93% !important;
+              height: 93% !important;
+            }
+          }
+        }
+
+        &.intereses {
+          .frame-chart {
+            canvas {
+              width: 92% !important;
+              height: 92% !important;
+            }
+          }
+        }
+
+        &.multiples {
+          .frame-chart {
+            canvas {
+              height: auto !important;
+            }
+          }
+        }
+        &.emocional {
+          .frame-chart {
+            canvas {
+              margin-right: -30px;
+              width: 97% !important;
+              height: 79% !important;
+            }
+          }
+        }
+        &.aprendizaje {
+          .frame-chart {
+            canvas {
+              width: 80% !important;
+              height: 84% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 930px) {
+  .container {
+    .containertop {
+      .container-progress {
+        width: 85%;
+        .container-progress-v {
+          p {
+            font-size: 17px;
+          }
+          .circle {
+            height: 44% !important;
+          }
+          .ppro {
+            font-size: 10px;
+            margin-left: 11px;
+          }
+        }
+        .container-progresscap {
+          width: 78%;
+          .frame-caps {
+            width: 98%;
+            .pcaps {
+              .caps {
+                font-size: 11px;
+                .frame-bar {
+                  width: 24%;
+                  .bar-capsprogress {
+                  height: 4px;
+                  }
+                }
+              }
+            }
+          }
+          .frame-tv {
+            margin-left: 3%;
+            .tv {
+              font-size: 15px;
+            }
+            .tvt {
+              font-size: 9px;
+            }
+          }
+        }
+      }
+
+      // .container-activity {
+      //   display: none;
+      //   width: 38%;
+      //   height: auto;
+      //   border-radius: 20px;
+      //   background-color: white;
+      //   .activity {
+      //     margin: 20px 20px 10px 25px;
+      //   }
+      // }
+    }
+
+    .container-statistics {
+      width: 94%;
+      .container-stop {
+        .p-statistics {
+          .p1 {
+            font-size: 20px;
+          }
+          .p2 {
+            font-size: 10px;
+            margin-left: 4px;
+          }
+        }
+        .container-bar-evolution {
+          .p-evolution {
+            font-size: 11px;
+            width: 32%;
+            margin-right: 2%;
+          }
+          .frame-bar-evolution {
+            width: 34%;
+            .bar-evolution {
+              width: 82%;
+            }
+          }
+        }
+      }
+      .container-sbot {
+        width: 96%;
+        .cont {
+          width: 46%;
+          max-width: 46%;
+          min-width: 46%;
+          .frame-p-info {
+            p {
+              font-size: 13px;
+            }
+            .info {
+              img {
+                width: 11px;
+              }
+              .txt-inf {
+                width: 150px;
+                p {
+                  padding: 10px 11px;
+                  font-size: 11px;
+                }
+              }
+            }
+          }
+          &.aptitudes {
+            .frame-chart {
+              canvas {
+                width: 100% !important;
+                height: 95% !important;
+              }
+            }
+          }
+          &.personalidad {
+            .frame-chart {
+              canvas {
+                width: 97% !important;
+                height: 80% !important;
+              }
+            }
+          }
+
+          &.intereses {
+            .frame-chart {
+              canvas {
+                width: 95% !important;
+                height: 80% !important;
+              }
+            }
+          }
+
+          &.multiples {
+            .frame-chart {
+              canvas {
+                width: 95% !important;
+                height: 85% !important;
+              }
+            }
+          }
+          &.emocional {
+            .frame-chart {
+              canvas {
+                margin-right: -30px;
+                width: 93% !important;
+                height: 69% !important;
+              }
+            }
+          }
+          &.aprendizaje {
+            .frame-chart {
+              canvas {
+                width: 80% !important;
+                height: 78% !important;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+@media (max-width: 640px) {
+  .container {
+    .containertop {
+      .container-progress {
+        width: 95%;
+        .container-progress-v {
+          .circle {
+            height: 42% !important;
+          }
+          .ppro {
+            font-size: 11px;
+          }
+        }
+        .container-progresscap {
+          .frame-caps {
+            width: 100%;
+            .pcaps {
+              .caps {
+                .frame-bar {
+                  width: 20%;
+                }
+              }
+            }
+          }
+          .frame-tv {
+            margin-left: 1%;
+
+          }
+        }
+      }
+
+      // .container-activity {
+      //   display: none;
+      //   width: 38%;
+      //   height: auto;
+      //   border-radius: 20px;
+      //   background-color: white;
+      //   .activity {
+      //     margin: 20px 20px 10px 25px;
+      //   }
+      // }
+    }
+
+    .container-statistics {
+      width: 94%;
+      .container-stop {
+        .p-statistics {
+          justify-content: center;
+          align-items: center;
+          margin-left: 4%;
+          width: 58%;
+          .p1 {
+            font-size: 19px;
+          }
+        }
+        .container-bar-evolution {
+          width: 42%;
+          .p-evolution {
+            font-size: 11px;
+            width: 54%;
+          }
+          .frame-bar-evolution {
+            width: 32%;
+            .bar-evolution {
+              width: 80%;
+            }
+          }
+        }
+      }
+      .container-sbot {
+        .cont {
+          width: 50%;
+          max-width: 50%;
+          min-width: 50%;
+
+          .frame-p-info {
+            margin-bottom: 0;
+          }
+          &.aptitudes {
+            .frame-chart {
+              canvas {
+                margin-right: -35px;
+                width: 110% !important;
+                height: 98% !important;
+              }
+            }
+          }
+          &.personalidad {
+            .frame-chart {
+              canvas {
+                margin-right: -15px;
+                width: 98% !important;
+                height: 70% !important;
+              }
+            }
+          }
+
+          &.intereses {
+            .frame-chart {
+              canvas {
+                width: 95% !important;
+                height: 80% !important;
+              }
+            }
+          }
+
+          &.multiples {
+            .frame-chart {
+              canvas {
+                width: 95% !important;
+                height: 85% !important;
+              }
+            }
+          }
+          &.emocional {
+            .frame-chart {
+              canvas {
+                margin-right: -30px;
+                width: 87% !important;
+                height: 65% !important;
+              }
+            }
+          }
+          &.aprendizaje {
+            .frame-chart {
+              canvas {
+                width: 72% !important;
+                height: 76% !important;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    .containertop {
+      .container-progress {
+        flex-direction: column;
+        justify-content: center;
+
+        .container-progress-v {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 90%;
+          height: 50px;
+          margin-top: 25px;
+          p{
+            height: fit-content;
+            margin: 0;
+          }
+          .txt{
+            width: 15%;
+            text-align: center;
+            font-weight: 500;
+            font-size: 15px;
+          }
+          .circle {
+            width: 130%;
+            height: 110% !important;
+          }
+          .ppro{
+            margin: 0 2px;
+            font-size: 10px;
+          }
+        }
+
+        .container-progresscap {
+          box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.03);
+          width: 88%;
+          .frame-caps{
+            margin-top: 5px;
+          }
+        }
+      }
+
+
+    }
+    .container-statistics {
+      .container-stop {
+        .p-statistics {
+          .p2{
+            font-size: 9px;
+          }
+        }
+        .container-bar-evolution {
+          .p-evolution {
+            font-size: 10px;
+          }
+        }
+      }
+      .container-sbot {
+        .cont {
+          width: 90%;
+          max-width: 90%;
+          min-width: 90%;
+          &.aptitudes {
+            .frame-chart {
+              margin-top: 10px;
+              canvas {
+                margin-right: 0;
+                width: 90% !important;
+                height: 85% !important;
+              }
+            }
+          }
+          &.personalidad {
+            .frame-chart {
+              margin-top: 6px;
+              canvas {
+                margin-right: 0;
+                width: 104% !important;
+                height: 85% !important;
+              }
+            }
+          }
+
+          &.intereses {
+            .frame-chart {
+              margin-top: 5px;
+              canvas {
+                width: 100% !important;
+                height: 85% !important;
+              }
+            }
+          }
+
+          &.multiples {
+            .frame-chart {
+              canvas {
+                width: 95% !important;
+                height: 80% !important;
+              }
+            }
+          }
+          &.emocional {
+            .frame-chart {
+              canvas {
+                margin-right: 0;
+                width: 88% !important;
+                height: 68% !important;
+              }
+            }
+          }
+          &.aprendizaje {
+            .frame-chart {
+              margin-top: 8px;
+              canvas {
+                width: 76% !important;
+                height: 80% !important;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media (max-width: 421px) {
+  .container {
+    .containertop {
+      .container-progress {
+        .container-progress-v {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 90%;
+          height: 50px;
+          margin-top: 25px;
+          p{
+            height: fit-content;
+            margin: 0;
+          }
+          .txt{
+            display: none;
+          }
+          .circle {
+            width: 130%;
+            height: 110% !important;
+          }
+          .ppro{
+            margin: 0 2px;
+            font-size: 10px;
+          }
+        }
+
+        .container-progresscap {
+          box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.03);
+          width: 100%;
+          .frame-caps{
+            margin-top: 5px;
+          }
+          .frame-tv {
+            margin-left: 1%;
+            .tv {
+              font-size: 14px;
+              margin-left: 26%;
+              margin-right: auto;
+            }
+
+            .tvt {
+              margin-left: 26%;
+              margin-right: auto;
+            }
+          }
+        }
+      }
+
+
+    }
+    .container-statistics {
+      position: relative;
+      .container-stop {
+
+        .p-statistics {
+          justify-content: start;
+          width: 92%;
+          .p2{
+            font-size: 9px;
+            margin-top: 8px;
+          }
+        }
+        .container-bar-evolution {
+          position: absolute;
+          right: -8px;
+          top: -3px;
+          color: gray;
+          width: 62%;
+          .p-evolution {
+            font-size: 10px;
+          }
+          .frame-bar-evolution {
+            width: 30%;
+            .bar-evolution {
+              width: 85%;
+            }
+          }
+        }
+      }
+      .container-sbot {
+        .cont {
+          width: 95%;
+          max-width: 95%;
+          min-width: 95%;
+          &.aptitudes {
+            .frame-chart {
+              margin-top: 10px;
+              canvas {
+                margin-right: 0;
+                width: 105% !important;
+                height: 100% !important;
+              }
+            }
+          }
+          &.personalidad {
+            .frame-chart {
+              margin-top: 6px;
+              canvas {
+                margin-right: 0;
+                width: 107% !important;
+                height: 87% !important;
+              }
+            }
+          }
+
+          &.intereses {
+            .frame-chart {
+              margin-top: 5px;
+              canvas {
+                width: 100% !important;
+                height: 85% !important;
+              }
+            }
+          }
+
+          &.multiples {
+            .frame-chart {
+              margin-top: 10px;
+              canvas {
+                width: 100% !important;
+                height: 100% !important;
+              }
+            }
+          }
+          &.emocional {
+            .frame-chart {
+              margin-top: 10px;
+              canvas {
+                margin-right: 0;
+                width: 106% !important;
+                height: 91% !important;
+              }
+            }
+          }
+          &.aprendizaje {
+            .frame-chart {
+              margin-top: 8px;
+              canvas {
+                width: 76% !important;
+                height: 80% !important;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+/*
+ @-moz-keyframes spin {
+//   100% { -moz-transform: rotate(360deg); }
+// }
+// @-webkit-keyframes spin {
+//   100% { -webkit-transform: rotate(360deg); }
+// }
+// @keyframes spin {
+//   100% {
+//       -webkit-transform: rotate(360deg);
+//       transform:rotate(360deg);
+//   }
+// }
+ */

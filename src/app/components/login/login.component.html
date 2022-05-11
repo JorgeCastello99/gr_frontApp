@@ -1,0 +1,66 @@
+<div class="container" style="background-image: url('https://grapi.growthroad.es:5555/img?imgRef=fondo&ext=png');">
+
+  <div class="container-login">
+    <div class="box-login">
+      <div class="box">
+        <img src="https://grapi.growthroad.es:5555/img?imgRef=logo-gr-claro&ext=png" alt="">
+        <h3>Inicia sesión en Growthroad</h3>
+        <div class="login-cred">
+          <div class="cred-marg">
+            <div class="user" >
+              <input placeholder="Correo electrónico" class="inpcred" type="text"[(ngModel)]="uname">
+            </div>
+            <div class="passw">
+
+              <div class="pcont">
+                <input placeholder="Contraseña" class="inpcred" [type]="showPass ? 'text' : 'password'" [(ngModel)]="pword">
+                <button (click)="onTogglePass()">
+                  <img src="https://grapi.growthroad.es:5555/img?imgRef=eye&ext=png" alt="">
+                </button>
+              </div>
+
+            </div>
+
+            <div class="remember">
+              <!-- <div class="remem-cont">
+                <input style="height: 15px;" type="checkbox" [(ngModel)]="remember"> <label
+                for="rememberMe">Recuérdame</label>
+              </div> -->
+                <div class="password">
+                  <span [routerLink]="['/pwd']">¿Has olvidado tu contraseña?</span>
+                </div>
+            </div>
+            <button (click)="onLogin()">Iniciar Sesión</button>
+            <p class="new"> <a href="https://www.growthroad.es/#/register">¿No tienes una cuenta en Growthroad? <span>Regístrate.</span></a></p>
+
+          </div>
+        </div>
+
+
+        <!-- <div class="networks">
+          <button><img src="../../../assets/img/google.png" alt=""><div class="text">Iniciar sesión con Google</div></button>
+
+        <button><img src="../../../assets/img/facebook.png" alt=""><div class="text">Iniciar sesión con Facebook</div></button>
+        </div> -->
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Error de credenciales</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>{{txtErr}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cerrar</button>
+  </div>
+</ng-template>

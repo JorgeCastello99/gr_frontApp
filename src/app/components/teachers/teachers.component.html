@@ -1,0 +1,156 @@
+<!-- <div class="container">
+  <div class="sub-container">
+    <h3>PLATAFORMA DE PROFESORES</h3>
+    <h4 style="text-transform:uppercase">{{school.name}}{{school.city}}</h4>
+    <hr
+      style="border:1px;background-color:#65656588;color:#616161;height:2px;width:80%;margin-left: auto;margin-right: auto;" />
+    <div class="btn-container">
+      <button *ngIf="this.user.role == 'school-admin'" value="teacher" (click)="onShowModal(content, $event)">INVITACIÓN DE
+        PROFESORES</button>
+      <button value="student" (click)="onShowModal(content, $event)">INVITACIÓN DE ALUMNOS</button>
+      <button *ngIf="this.user.role == 'school-admin'" value="grade" (click)="onShowModal(content, $event)">CREAR CLASE</button>
+    </div>
+    <div class="students-container">
+      <ul class="nav nav-tabs">
+        <li  class="nav-item" *ngFor="let gl of gradesList; let i = index" [class.active]="selectedIndex === i"
+          (click)="onChangeGrade(gl._id, i)">
+          <a class="nav-link">{{gl.course}}º {{gl.letter}}</a>
+          <div *ngIf="this.user.role == 'school-admin'" class="click" (click)="onDeleteGrade(gl._id)">
+            X
+          </div>
+        </li>
+      </ul>
+      <div class="item-container">
+        <div class="students">
+          <div class="heads">
+            <input type="checkbox">
+            <p class="name">Nombre</p>
+            <p class="lic">Licencia</p>
+            <p class="ema">Correo</p>
+            <div class="con"></div>
+          </div>
+          <div class="student" *ngFor="let sl of studentsList">
+            <div class="scontainer">
+              <input type="checkbox">
+              <div class="name">
+                <p>{{sl.name}}</p>
+              </div>
+              <div class="licence">
+                <p>{{sl.license}}</p>
+              </div>
+              <div class="email">
+                <p>{{sl.email}}</p>
+              </div>
+              <div class="controls">
+                <button class="perf" [routerLink]="['/home/teachers/student/' + sl._id]">Ver perfil</button>
+                <button class="lic" title="Cambiar la licencia gratuita">Licencia</button>
+                <button class="del" title="Eliminar afiliación del alumno al colegio">Eliminar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div [ngSwitch]="contentModal">
+    <div *ngSwitchCase="'teacher'">
+      <div class="teacher">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Generar invitación profesores</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="selectgrad">
+            <p>Añadir profesor:(puedes añadir tantos como quieras)</p>
+            <select [(ngModel)]="idGr">
+              <option *ngFor="let gl of gradesList" [value]="gl._id">{{gl.course}}{{gl.letter}}</option>
+            </select>
+          </div>
+          <div class="addT">
+            <p class="err">{{modalError}}</p>
+            <input type="text" onblur="this.focus()" autofocus [(ngModel)]="email"><button (click)="onAdd()">+</button>
+          </div>
+          <div class="result">
+            <button *ngIf="listAdd.length" class="elim" (click)="emptyList()">Eliminar lista</button>
+            <button *ngIf="listAdd.length" class="send" (click)="sendTeachers()">Enviar</button>
+            <p *ngFor="let item of listAdd.reverse()">{{item}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'student'">
+      <div class="student">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Generar invitación alumnos</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="selectgrad">
+            <p>Añadir alumno:(puedes añadir tantos como quieras)</p>
+            <select *ngIf="this.user.role=='school-admin'" [(ngModel)]="idGr">
+              <option *ngFor="let gl of gradesList" [value]="gl._id">{{gl.course}}{{gl.letter}}</option>
+            </select>
+            <div *ngIf="this.user.role=='teacher'">
+              <p class="gl" *ngFor="let gl of gradesList">{{gl.course}}{{gl.letter}}</p>
+            </div>
+          </div>
+          <div class="addT">
+            <p class="err">{{modalError}}</p>
+            <input type="text" onblur="this.focus()" autofocus [(ngModel)]="email"><button (click)="onAdd()">+</button>
+          </div>
+          <div class="result">
+            <button *ngIf="listAdd.length" class="elim" (click)="emptyList()">Eliminar lista</button>
+            <button *ngIf="listAdd.length" class="send" (click)="sendStudents()">Enviar</button>
+            <p *ngFor="let item of listAdd.reverse()">{{item}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'grade'">
+      <div class="grade">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Crear clase</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="addT">
+            <p class="err">{{modalError}}</p>
+            <div class="select-container">
+              <p *ngIf="!course">=></p>
+              <select [(ngModel)]="course">
+                <option [value]="'4ºESO'">4ºESO</option>
+                <option [value]="'1ºBACH'">1ºBACH</option>
+                <option [value]="'2ºBACH'">2ºBACH</option>
+              </select>
+              <div class="letter">
+                <p>Letra:</p>
+                <input style="text-transform:uppercase" type="text" [(ngModel)]=" letter">
+              </div>
+            </div>
+            <button (click)="onAddGrade()" class="addg">Añadir</button>
+          </div>
+          <div class="result">
+            <button *ngIf="listAdd.length" (click)="sendTeachers()">Enviar</button>
+            <p *ngFor="let item of listAdd.reverse()">{{item}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cerrar</button>
+  </div>
+</ng-template> -->
+
+<div class="containerc">
+  <p>PRÓXIMAMENTE</p>
+</div>

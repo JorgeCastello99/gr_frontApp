@@ -1,0 +1,197 @@
+<!-- <div class="containerc">
+  <p>PRÓXIMAMENTE</p>
+</div> -->
+
+<div class="container">
+  <div class="containertop">
+    <div class="container-progress">
+      <div class="container-progress-v">
+        <p class="txt">Mi progreso</p>
+        <div class=circle>
+          <circle-progress [percent]="prog" [radius]="40" [outerStrokeWidth]="6" [innerStrokeWidth]="0"
+            [outerStrokeColor]="'#bb00ff'" [outerStrokeGradient]=true [outerStrokeGradientStopColor]="'#ff00d4'"
+            [titleColor]="'#ff00d4'" [unitsColor]="'#ff00d4'" [titleFontWeight]="'700'" [unitsFontWeight]="'700'"
+            [responsive]=true [showSubtitle]=false [unitsFontSize]="'12'" [titleFontSize]="'20'" [animation]="true"
+            [animationDuration]="300"></circle-progress>
+
+        </div>
+        <p class="ppro">{{capitulos}}/6 Capítulos</p>
+        <p class="ppro">{{temas}}/31 Temas</p>
+        <p class="ppro">{{subtemas}}/111 Subtemas</p>
+      </div>
+
+      <div class="container-progresscap">
+        <div class="frame-caps">
+          <div class="pcaps">
+            <div class="caps" *ngFor=" let mod of modList">
+              <p class="pc"><b>Capítulo {{mod.num}}:</b> {{mod.name}} </p>
+              <div class="frame-bar">
+                <div class="bar-capsprogress">
+                  <div *ngIf="(arraybar[mod.num-1]/finT[mod.num-1])*100 < 100; else maximo" class="bar"
+                    role="progressbar"
+                    style="  background-color: rgb(255 156 4); filter: brightness(110%); filter:drop-shadow(2px 2px 2px rgb(255 156 4))"
+                    aria-valuemin="0" aria-valuemax="100"
+                    [ngStyle]="{'width': (arraybar[mod.num-1]/finT[mod.num-1])*100 +'%'}"></div>
+                  <ng-template #maximo>
+                    <div class="bar" role="progressbar"
+                      style="  background-color: rgb(190 8 250); filter: brightness(110%); filter:drop-shadow(2px 2px 2px rgb(190 8 250))"
+                      aria-valuemin="0" aria-valuemax="100"
+                      [ngStyle]="{'width': (arraybar[mod.num-1]/finT[mod.num-1])*100 +'%'}"></div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="frame-tv">
+          <p class="tv">Total Subtemas</p>
+          <p class="tvt">{{subtemas}}/111 Subtemas hechos en total</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- <div class="container-activity">
+      <div class="activity">
+        <p>Actividad</p>
+      </div>
+
+    </div> -->
+  </div>
+
+
+  <div class="container-statistics">
+    <div class="container-stop">
+      <div class="p-statistics">
+        <p class="p1">Estadísticas</p>
+        <p class="p2">Datos generados con Inteligencia Artificial</p>
+      </div>
+      <div class="container-bar-evolution">
+        <div class="p-evolution">Evolución de la IA</div>
+        <div class="frame-bar-evolution">
+          <div class="bar-evolution">
+            <div *ngIf="prog< 100; else maximo" class="bar-e" role="progressbar"
+              style="  background-color: rgb(255 156 4); filter: brightness(110%); filter:drop-shadow(2px 2px 2px rgb(255 156 4))"
+              aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': prog+'%'}"></div>
+            <ng-template #maximo>
+              <div class="bar-e" role="progressbar"
+                style="  background-color: rgb(190 8 250); filter: brightness(110%); filter:drop-shadow(2px 2px 2px rgb(190 8 250))"
+                aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': prog +'%'}"></div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-sbot">
+      <div class="cont aptitudes">
+        <div class="frame-p-info">
+          <p>Aptitudes profesionales</p>
+          <div class="info">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=senal-de-informacion&ext=png" alt="">
+            <div class="txt-inf">
+              <p>El algoritmo, tras analizar tus respuestas en los diferentes pasos, elaborará tus aptitudes profesionales con el objetivo de que seas consciente cuáles de ellas están más desarrolladas en ti</p>
+            </div>
+          </div>
+        </div>
+        <div class="frame-chart">
+          <canvas baseChart [colors]="colorsAp" [datasets]="doughnutChartDataAp" [labels]="doughnutChartLabelsAp"
+            [chartType]="doughnutChartTypeAp" [options]="dougOptionsAp">
+          </canvas>
+        </div>
+      </div>
+
+      <div class="cont personalidad">
+        <div class="frame-p-info">
+          <p>Personalidad</p>
+          <div class="info">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=senal-de-informacion&ext=png" alt="">
+            <div class="txt-inf">
+              <p>Poseer datos acerca de tu personalidad, saber cuáles son tus puntos fuertes y aquello que puedes mejorar es un punto de partida que te colocará en una posición ventajosa frente a otras personas que lo desconocen y por tanto tu probabilidad de acertar en tus elecciones será mayor</p>
+            </div>
+          </div>
+        </div>
+        <div class="frame-chart">
+          <canvas baseChart [colors]="radarChartColorsPe" [datasets]="radarChartDataPe" [options]="radarChartOptionsPe"
+            [labels]="radarChartLabelsPe" [chartType]="radarChartTypePe">
+          </canvas>
+        </div>
+      </div>
+
+      <div class="cont intereses">
+        <div class="frame-p-info">
+          <p>Intereses vocacionales</p>
+          <div class="info">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=senal-de-informacion&ext=png" alt="">
+            <div class="txt-inf">
+              <p>Existen diferentes ámbitos o campos a los que pertenecen innumerables profesiones o tareas profesionales. Algunos de estos intereses nos llaman más la atención o notamos que parece que se adaptan más a nuestras inquietudes o motivaciones</p>
+            </div>
+          </div>
+        </div>
+        <div class="frame-chart">
+          <canvas baseChart [colors]="radarChartColorsIv" [datasets]="radarChartDataIv" [options]="radarChartOptionsIv"
+            [labels]="radarChartLabelsIv" [chartType]="radarChartTypeIv">
+          </canvas>
+        </div>
+      </div>
+
+
+      <div class="cont multiples">
+        <div class="frame-p-info">
+          <p>Inteligencias múltiples (GADNER)</p>
+          <div class="info">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=senal-de-informacion&ext=png" alt="">
+            <div class="txt-inf">
+              <p>La Teoría de las Inteligencias Múltiples habla de que cada uno de nosotros tiene algunas partes del cerebro más desarrolladas, por tanto, se podrían decir que son más inteligentes que otras personas realizando unas determinadas actividades</p>
+            </div>
+          </div>
+        </div>
+        <div class="frame-chart">
+          <canvas baseChart [colors]="colorsiM" [datasets]="doughnutChartDataiM" [labels]="doughnutChartLabelsiM"
+            [chartType]="doughnutChartTypeiM" [options]="dougOptionsiM">
+          </canvas>
+        </div>
+      </div>
+
+      <div class="cont emocional">
+        <div class="frame-p-info">
+          <p>Inteligencia emocional</p>
+          <div class="info">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=senal-de-informacion&ext=png" alt="">
+            <div class="txt-inf">
+              <p>Nuestro mundo emocional se pone en juego en cada cosa que hacemos o decimos, no hay nada en este mundo que no nos afecte a nivel interior, y saber entender qué está ocurriendo y qué tenemos que hacer con eso es primordial para nuestra propia felicidad</p>
+            </div>
+          </div>
+        </div>
+        <div class="frame-chart">
+          <canvas baseChart [colors]="colorsIe" [data]="polarAreaChartDataIe" [labels]="polarAreaChartLabelsIe"
+            [legend]="polarAreaLegendIe" [chartType]="polarAreaChartTypeIe" [options]="polarChartOptionsIe">
+          </canvas>
+        </div>
+      </div>
+
+      <div class="cont aprendizaje">
+        <div class="frame-p-info">
+          <p>Estilos de aprendizaje (Honey y Mumford)</p>
+          <div class="info">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=senal-de-informacion&ext=png" alt="">
+            <div class="txt-inf">
+              <p>Nuestro mundo emocional se pone en juego en cada cosa que hacemos o decimos, no hay nada en este mundo que no nos afecte a nivel interior, y saber entender qué está ocurriendo y qué tenemos que hacer con eso es primordial para nuestra propia felicidad</p>
+            </div>
+          </div>
+        </div>
+        <div class="frame-chart">
+          <canvas baseChart [colors]="colorsEa" [datasets]="barChartDataEa" [labels]="barChartLabelsEa"
+            [options]="barChartOptionsEa" [legend]="barChartLegendEa" [chartType]="barChartTypeEa">
+          </canvas>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

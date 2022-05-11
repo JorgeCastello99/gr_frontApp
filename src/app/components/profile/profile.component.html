@@ -1,0 +1,170 @@
+<!-- <div class="containerc">
+  <p>PRÓXIMAMENTE</p>
+</div> -->
+<div class="container">
+  <div class="cont-top">
+    <div class="top-head">
+      <img src="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png" alt="">
+      <div class="head-name">
+        <p>{{userName}} {{userSurName}}</p>
+        <span>Growthroader desde {{dateGr}}</span>
+      </div>
+    </div>
+    <div class="top-control">
+
+    </div>
+  </div>
+  <div class="cont-bot">
+    <div class="col a">
+      <p class="tit">
+        Editar cuenta
+      </p>
+      <div class="opt">
+        <div class="base-cont">
+          <div class="upd-cont" (click)="updAnim(1)" [ngClass]="{'anim': animUpdName}">
+
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=user&ext=png" alt="">
+            <div class="txt">
+              <p>Información personal</p>
+              <span>Configura tu nombres y apellidos</span>
+            </div>
+            <span class="arrow">></span>
+          </div>
+          <div class="upd-config" [ngClass]="{'anim': animUpdName}">
+            <div class="quit-anim" (click)="removeAnim(1)">
+              < </div>
+                <div class="names">
+                  <input type="text" maxlength="20" [placeholder]="userName" [(ngModel)]="upName">
+                  <input type="text" maxlength="30" [placeholder]="userSurName" [(ngModel)]="upSurName">
+                </div>
+                <p class="error" *ngIf="errorSh">{{errorSh}}</p>
+                <button (click)="setUserData(1)">Actualizar nombre</button>
+            </div>
+          </div>
+          <div class="base-cont">
+            <div class="upd-cont" (click)="updAnim(2)" [ngClass]="{'anim': animUpdEm}">
+
+              <img src="https://grapi.growthroad.es:5555/img?imgRef=user&ext=png" alt="">
+              <div class="txt">
+                <p>Información de la cuenta</p>
+                <span>Configura tu email</span>
+              </div>
+              <span class="arrow">></span>
+            </div>
+            <div class="upd-config" [ngClass]="{'anim': animUpdEm}">
+              <div class="quit-anim" (click)="removeAnim(2)"> < </div>
+              <div class="fix">
+                <div class="pw-cont">
+                  <input [ngStyle]="{'display': showPwdCheckk}" type="email" autocomplete="off" placeholder="{{userEmail}}" [(ngModel)]="upEmail">
+                  <input [ngStyle]="{'display': showPwdCheck}" type="password" autocomplete="off" placeholder="Contraseña actual" [(ngModel)]="upPwdCheck">
+                </div>
+                <p class="error fixs" *ngIf="errorSh">{{errorSh}}</p>
+                <button *ngIf="showPwdCheck == 'none'" class="save-pw" (click)="setUserData(2)">Actualizar email</button>
+                <button *ngIf="showPwdCheck !== 'none'"  class="save-pw" (click)="setUserData(4)">Enviar confirmación</button>
+              </div>
+
+              </div>
+            </div>
+            <div class="base-cont">
+              <div class="upd-cont" (click)="updAnim(3)" [ngClass]="{'anim': animUpdPw}">
+
+                <img src="https://grapi.growthroad.es:5555/img?imgRef=padlock&ext=png" alt="">
+                <div class="txt">
+                  <p>Información de la seguridad</p>
+                  <span>Configura tu contraseña</span>
+                </div>
+                <span class="arrow">></span>
+              </div>
+              <div class="upd-config" [ngClass]="{'anim': animUpdPw}">
+                <div class="quit-anim" (click)="removeAnim(3)">
+                  < </div>
+                    <div class="fix">
+                      <div class="pw-cont">
+                        <input type="password" autocomplete="new-password" [(ngModel)]="upPwdOld"
+                          placeholder="Escribe la contraseña antigua">
+                        <input type="password" [(ngModel)]="upPwdNew" placeholder="Escribe la contraseña nueva">
+                        <input type="password" [(ngModel)]="upPwdNewR"
+                          placeholder="Escribe de nuevo la contraseña nueva">
+                      </div>
+                      <p class="error fix" *ngIf="errorSh">{{errorSh}}</p>
+                      <button (click)="setUserData(3)" class="save-pw">Actualizar contraseña</button>
+                    </div>
+                </div>
+              </div>
+              <div class="base-cont">
+                <div class="upd-cont" (click)="updAnim(4)" [ngClass]="{'anim': animUpdSc}">
+
+                  <img src="https://grapi.growthroad.es:5555/img?imgRef=padlock&ext=png" alt="">
+                  <div class="txt">
+                    <p>Información de afiliación</p>
+                    <span>Configura tu afiliación a tu colegio o instituto.</span>
+                  </div>
+                  <span class="arrow">></span>
+                </div>
+                <div class="upd-config" [ngClass]="{'anim': animUpdSc}">
+                  <div class="quit-anim" (click)="removeAnim(4)"><</div>
+                    <div class="fix">
+                      <div class="pw-cont">
+                        <input  type="text" autocomplete="off" placeholder="Escribe el código de afiliación" [(ngModel)]="codeSchool">
+                      </div>
+                      <p class="error fixs" *ngIf="errorSh">{{errorSh}}</p>
+                      <button class="save-pw">Aplicar código</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col c">
+              <div class="fix-cont" [ngClass]="{'anim': configShow}">
+                <p class="tit">
+                  Configuración de cuenta
+                </p>
+                <div class="opt">
+                  <div class="config">
+                    <p>Licencia de Growthroad</p>
+                    <p class="license"
+                      [ngClass]="{'a': userLicense == 'A','b': userLicense == 'B','s': userLicense == 'S'}">
+                      {{userLicense}}</p>
+                  </div>
+                  <hr
+                    style="border:1px;background-color:#8e8e8e88;color:#9d9d9d;height:1px;width:70%;margin-left: auto;margin-right: auto;margin-top: 0;margin-bottom: 0;" />
+                  <div class="config a">
+                    <p (click)="setConfig(1)">Ayuda y asistencia</p>
+                  </div>
+                  <hr
+                    style="border:1px;background-color:#8e8e8e88;color:#9d9d9d;height:1px;width:70%;margin-left: auto;margin-right: auto;margin-top: 0;margin-bottom: 0;" />
+                  <div class="config a">
+                    <p (click)="setConfig(2)">Ver métodos de pago</p>
+                  </div>
+                </div>
+                <button class="sales-platform">Ir al programa completo</button>
+              </div>
+              <div class="flex-cont" [ngClass]="{'anim': configShow}" [ngSwitch]="optionConfig">
+                <img (click)="quitConfig()" src="https://grapi.growthroad.es:5555/img?imgRef=left-arrow&ext=png" alt="">
+                <div [ngClass]="{'on': emailShow}" class="help" *ngSwitchCase="1">
+                  <div class="send" (click)="sendEmail()"><span id='click-btn'>¡Envianos un Email!</span></div>
+                  <div class="form" id="form">
+                    <input [ngClass]="{'on': emailShow}" type="text" >
+                    <input [ngClass]="{'on': emailShow}" type="text" placeholder="email" [(ngModel)]="userEmail">
+                    <textarea [ngClass]="{'on': emailShow}" type="text" placeholder="Mensaje"></textarea>
+                    <button [ngClass]="{'on': emailShow}" class='btn-send'>Send</button>
+
+                  </div>
+                </div>
+                <div class="pay" *ngSwitchCase="2">
+                  <div class="method">
+                    <p>Online</p>
+                    <span>En nuestra plataforma podrás darte de alta en nuestro producto con nuestra pasarela de pago pulse aquí.</span>
+                    <button>Pasarela de pagos</button>
+                  </div>
+                  <div class="method">
+                    <p>Facturación</p>
+                    <span>Ponte en contacto con nosotros para que te informemos de las ofertas para grupos, colegios o particulares.</span>
+                    <button (click)="onContact()">Contactar</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
