@@ -1,0 +1,85 @@
+.container{
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  .profile-container{
+    display: block;
+    margin-top: 45px;
+    .col{
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      img{
+
+        width: 100px;
+        border-radius: 50%;
+        border: 1px solid rgba(178, 174, 174, 0.5);
+      }
+      .name{
+
+        font-size: 30px !important;
+        font-weight: 500;
+      }
+      p{
+        font-size: 20px;
+        margin-bottom: 0;
+        margin-top: 5px;
+      }
+    }
+  }
+  .graphs{
+    margin-top: 40px;
+     .body-stadist{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+      .radarc{
+        width: 50%;
+        canvas{
+          width: 90% !important;
+          height: 90% !important;
+        }
+
+      }
+      .linec{
+        width: 40%;
+        height: fit-content;
+        .linec-container{
+          width: 50%;
+          .col{
+            p{
+              margin-bottom: 0;
+              margin-top: 8px;
+
+            }
+            .progress{
+            border: 1px solid black;
+            background-color: white;
+            .or{
+              width: 70%;
+              background-color: black;
+            }
+            .exp{
+              width: 20%;
+              background-color: black;
+            }
+            .con{
+              width: 30%;
+              background-color: black;
+            }
+            .int{
+              width: 100%;
+              background-color: black;
+            }
+          }
+          }
+        }
+     }
+      }
+
+  }
+  .student-progress{
+    height: 250px;
+    background-color: aqua;
+  }
+}

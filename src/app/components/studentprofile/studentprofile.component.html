@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="profile-container">
+      <div class="col">
+        <img src="https://grapi.growthroad.es:5555/img?imgRef=logo-gr-claro&ext=png" alt="">
+        <p class="name">Angel Martin</p>
+        <p>Correo: a@gmail.com</p>
+        <p>Clase: 1ºA</p>
+        <p>Fecha de creación: 22/9/21</p>
+      </div>
+  </div>
+  <hr style="border:1px;background-color:#8e8e8e88;color:#9d9d9d;height:1px;width:80%;margin-left: auto;margin-right: auto;" />
+  <div class="graphs">
+    <div class="body-stadist">
+      <div class="radarc">
+       <div style="display: block">
+         <canvas baseChart
+           [datasets]="radarChartData"
+           [options]="radarChartOptions"
+           [labels]="radarChartLabels"
+           [chartType]="radarChartType"
+           [colors]="lineChartColors">
+         </canvas>
+       </div>
+      </div>
+      <div class="linec">
+      <div class="linec-container">
+        <div class="col">
+          <p>ORIENTACIÓN</p>
+          <div class="progress">
+            <div class="or">
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <p>EXPERIENCIAS</p>
+          <div class="progress">
+            <div class="exp">
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <p>CONOCIMIENTOS</p>
+          <div class="progress">
+            <div class="con">
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <p>INTELIGENCIA ARTIFICIAL</p>
+          <div class="progress">
+            <div class="int">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+     </div>
+  </div>
+  <hr style="border:1px;background-color:#8e8e8e88;color:#9d9d9d;height:1px;width:80%;margin-left: auto;margin-right: auto;" />
+  <div class="student-progress">
+
+  </div>
+</div>

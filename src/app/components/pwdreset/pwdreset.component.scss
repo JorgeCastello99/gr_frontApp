@@ -1,0 +1,95 @@
+.container{
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  img{
+    width: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .card{
+    padding: 60px 85px;
+    border: 1px solid rgba(0, 193, 125, 0.94);
+    background-color: rgba(0, 255, 166, 0.26);
+    height: 330px;
+    h4{
+      color: rgb(2, 62, 41);
+      font-size: 32px;
+    }
+    .email-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      .pwd{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+        input{
+          height: 39px;
+          border-radius: 10px 0px 0px 10px;
+          border-right: 0;
+
+        }
+        button{
+          margin-top: 0;
+          height: 39px;
+          border-radius: 0px 10px 10px 0px;
+          img{
+            margin: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: -5px;
+          }
+        }
+      }
+      .lastspan{
+        margin-top: 10px;
+      }
+      p{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      span{
+        cursor: pointer;
+        font-size: 12px;
+        margin-bottom: 4px;
+        color: rgb(0, 123, 255);
+        font-weight: 500;
+      }
+      input{
+        width: 85%;
+        border-radius: 5px;
+        border: 1px solid rgb(0, 82, 53);
+        padding: 6px 10px;
+        &:focus{
+          border: 1px solid rgb(0, 255, 166);
+          outline: none !important;
+        }
+      }
+      button{
+
+        font-size: 19px;
+        color: rgb(0, 186, 121);
+        border: 1px solid rgb(0, 186, 121);
+        background-color: white;
+        padding: 4px 15px;
+        border-radius: 10px;
+        margin-top: 17px;
+        &:hover{
+          color: rgb(0, 186, 121);
+          border: 1px solid rgb(0, 186, 121);
+          background-color: white;
+          margin-top: 18px;
+          transition: margin-top 0.1s;
+        }
+      }
+    }
+  }
+}

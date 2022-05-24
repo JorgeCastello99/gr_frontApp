@@ -1,0 +1,949 @@
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+  .account {
+    position: absolute;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min-content !important;
+    right: 6%;
+    top: 0;
+    width: 100px;
+    .noti {
+      width: 50%;
+      position: relative;
+
+      img {
+        width: 30px;
+      }
+      .num {
+        position: absolute;
+        top: 0;
+        right: 7%;
+        background-color: aquamarine;
+        border-radius: 50%;
+        font-size: 8px;
+        padding: 2px 5px;
+        color: rgb(0, 0, 0);
+      }
+    }
+    .acc {
+      width: 50%;
+      img {
+        width: 50px;
+        border-radius: 30%;
+      }
+    }
+  }
+  .row {
+    width: 90%;
+    margin: 20px auto 20px auto;
+    .hello {
+      display: flex;
+      .text {
+        p {
+          margin-bottom: 0;
+        }
+        .nom {
+          font-weight: 600;
+          font-size: 25px;
+        }
+        .state {
+          color: rgba(0, 0, 0, 0.445);
+          font-size: 15px;
+        }
+      }
+
+      .inp-look {
+      }
+    }
+    .tit {
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+    .est-container {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      margin-top: 10px;
+      height: 280px;
+      justify-content: space-around;
+      .pro {
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 50px 8px rgba(0, 0, 0, 0.09);
+        box-shadow: 0px 0px 50px 8px rgba(0, 0, 0, 0.09);
+        width: 23%;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .tet {
+          margin-top: 10px;
+          color: black;
+          font-weight: 500;
+          font-size: 21px !important;
+          margin-bottom: 5px;
+        }
+        color: rgb(122, 0, 170);
+        p {
+          text-align: center;
+          color: rgb(167, 167, 167);
+
+          padding: 0 10px;
+          font-size: 13px;
+        }
+        .circle {
+          width: fit-content !important;
+          margin: 0 auto;
+          height: 50% !important;
+        }
+        .orient-respons {
+          display: none;
+          border: 2px solid rgb(252, 125, 146);
+          color: rgb(252, 125, 146);
+          background-color: white;
+          padding: 3px 12px;
+          font-weight: 500;
+          border-radius: 10px;
+          font-size: 18px;
+          &:hover {
+            border: 0;
+            background-color: rgb(252, 125, 146);
+            color: white;
+          }
+        }
+      }
+      .grafs {
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 50px 8px rgba(0, 0, 0, 0.09);
+        box-shadow: 0px 0px 50px 8px rgba(0, 0, 0, 0.09);
+        border-radius: 15px;
+        padding: 10px 0;
+        width: 75% !important;
+        position: relative;
+        .text-right {
+          position: absolute;
+          right: 3%;
+          top: 6%;
+          font-size: 12px;
+          color: rgba(121, 0, 208, 0.719);
+        }
+        .est {
+          margin-left: 5%;
+          margin-bottom: 0;
+          font-weight: 500;
+          font-size: 21px;
+          span {
+            font-size: 12px;
+            color: gray;
+          }
+        }
+        .grafcont {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+
+          height: 90%;
+          margin-bottom: -4%;
+          p {
+            font-weight: 500;
+          }
+          .grafr {
+            margin-left: -6%;
+            height: 90%;
+            width: 50%;
+            max-width: 50%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            canvas {
+              width: 76% !important;
+              height: 70% !important;
+            }
+          }
+          .grafd {
+            margin-left: -3%;
+
+            height: 90%;
+            width: 50%;
+            max-width: 50%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            canvas {
+              width: 90% !important;
+              height: 90% !important;
+            }
+            p {
+              margin-bottom: 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .rowcontinuar {
+    width: 98%;
+    margin: 40px auto 20px auto;
+    position: relative;
+
+    .tit {
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      margin-top: 10px;
+      margin-left: 62px;
+    }
+    .btn-pn{
+      position: absolute;
+      right: 5.4%;
+      top: 3px;
+      display: flex;
+      .btnc{
+        cursor: pointer;
+        margin-right: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+        border-radius: 8px;
+        font-size: 20px;
+        background-color: rgb(201, 201, 201);
+        padding: 0 5px;
+        &:hover{
+          background-color: rgb(60, 60, 60);
+          color: rgb(228, 228, 228);
+        }
+      }
+
+    }
+
+    .carrusel {
+      display: flex;
+      width: 90%;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+
+      .btnc {
+        color: white;
+        border: 0;
+        background-color: transparent;
+        font-size: 55px;
+        font-weight: 700;
+        &.prev {
+          margin-left: 10px;
+          text-shadow: 3px 0px 2px rgba(150, 150, 150, 1);
+           &:hover {
+            transform: translate(-4px,-2px);
+          }
+            }
+
+        &.next {
+          margin-right: 10px;
+          text-shadow: -3px 0px 2px rgba(150, 150, 150, 1);
+           &:hover {
+            transform: translate(4px,-2px);
+          }
+        }
+
+        &:hover {
+         color: rgb(129, 199, 186);
+         text-shadow: 0;
+        }
+      }
+    }
+    .carrusel-elemento {
+      display: flex;
+      width: 80%;
+      justify-content: center;
+
+      @keyframes animate-carrusel {
+        0% {
+          opacity: 0;
+          filter: brightness(1.5) saturate(2);
+          transform: scale(0.8, 0.8);
+        }
+
+        100% {
+          opacity: 1;
+          filter: brightness(0.9) saturate(1);
+          transform: scale(1, 1);
+        }
+      }
+
+      .card {
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0.26, 0.51, 0.74, 1.48);
+        animation-name: animate-carrusel;
+
+        background-size: cover;
+        background-position: center;
+        //background-color: #49d9be;
+        width: auto;
+        border-radius: 15px;
+        margin: 0 1%;
+        display: flex;
+        cursor: pointer;
+
+        .body-container {
+          margin: 15px 20px;
+
+          .tit-container {
+            height: 90px;
+            max-height: 90px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+            .titt {
+              font-size: 19px;
+              font-weight: 500;
+              color: white;
+              height: max-content;
+              margin-bottom: 0;
+            }
+          }
+
+          .circle {
+            width: 40% !important;
+            margin: 0 auto;
+            margin-bottom: 10px;
+          }
+
+          .texts {
+            display: flex;
+            color: white;
+            font-size: 15px;
+
+            .t {
+              margin-left: -5%;
+              margin-right: auto;
+            }
+
+            .a {
+              margin-right: -5%;
+              margin-left: auto;
+              text-align: right;
+            }
+
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//RESPONSIVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+@media (max-width: 1210px) {
+  .container {
+    .row {
+      .hello {
+        .text {
+          .nom {
+            font-size: 23px;
+          }
+          .state {
+            font-size: 14px;
+          }
+        }
+      }
+      .tit {
+        font-size: 20px;
+      }
+      .est-container {
+        .pro {
+          .tet {
+            margin-top: 5px;
+            font-size: 20px !important;
+          }
+          p {
+            font-size: 12px;
+          }
+          .circle {
+            height: 48% !important;
+          }
+        }
+        .grafs {
+          width: 74% !important;
+          .text-right {
+            top: 5%;
+          }
+          .est {
+            margin-left: 5%;
+            font-size: 20px;
+            span {
+              font-size: 11px;
+            }
+          }
+          .grafcont {
+            margin-bottom: 0;
+            .grafr {
+              margin-left: -3%;
+            }
+            .grafd {
+              p {
+                margin-bottom: -10px;
+              }
+              canvas {
+                width: 100% !important;
+                height: 93% !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    .rowcontinuar {
+      .tit {
+        font-size: 20px;
+        margin-bottom: 13px;
+      }
+      .btn-pn{
+        .btnc{
+          font-size: 19px;
+        }
+
+      }
+
+      .carrusel-elemento {
+        width: 79%;
+        .card {
+          .body-container {
+            .tit-container {
+              .titt {
+                font-size: 18px;
+              }
+            }
+            .circle {
+              width: 35% !important;
+            }
+            .texts {
+              font-size: 14px;
+
+              .t {
+                margin-left: -3%;
+              }
+
+              .a {
+                margin-right: -3%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 925px) {
+  .container {
+    .account {
+      .acc {
+        img {
+          width: 40px;
+        }
+      }
+    }
+    .row {
+      .hello {
+        .text {
+          .nom {
+            font-size: 20px;
+          }
+          .state {
+            font-size: 13px;
+          }
+        }
+      }
+      .tit {
+        font-size: 19px;
+      }
+      .est-container {
+        height: 240px;
+        .pro {
+          .tet {
+            font-size: 17px !important;
+          }
+          p {
+            font-size: 11px;
+          }
+          .circle {
+            height: 45% !important;
+          }
+        }
+        .grafs {
+          .text-right {
+            font-size: 11px;
+          }
+          .est {
+            margin-top: 10px;
+            margin-left: 4%;
+            font-size: 18px;
+            span {
+              font-size: 10px;
+            }
+          }
+          .grafcont {
+            height: 80%;
+            .grafr {
+              p {
+                font-size: 13px;
+              }
+            }
+            .grafd {
+              p {
+                margin-bottom: -5px;
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .rowcontinuar {
+      .tit {
+        font-size: 19px;
+        margin-bottom: 12px;
+        margin-left: 40px;
+      }
+      .btn-pn{
+        top: 2px;
+        .btnc{
+          font-size: 18px;
+        }
+
+      }
+      .carrusel {
+        .btnc {
+          font-size: 48px;
+        }
+      }
+      .carrusel-elemento {
+        .card {
+          .body-container {
+            margin: 13px 18px;
+            .tit-container {
+              .titt {
+                font-size: 17px;
+              }
+            }
+            .circle {
+              width: 34% !important;
+            }
+            .texts {
+              font-size: 13px;
+
+              flex-direction: column;
+              .t {
+                width: 100%;
+                text-align-last: left;
+              }
+
+              .a {
+                width: 100%;
+                text-align-last: r;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 865px) {
+  .container {
+    .rowcontinuar {
+      .tit {
+        font-size: 18px;
+      }
+      .carrusel-elemento {
+        .card {
+          .body-container {
+            .tit-container {
+              height: 80px;
+              max-height: 80px;
+              .titt {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 645px) {
+  .container {
+    .row {
+      width: 100%;
+      margin: 15px auto 15px auto;
+      .hello {
+        margin-top: 5px;
+        .text {
+          margin-left: 3.7%;
+          .nom {
+            font-size: 22px;
+          }
+          .state {
+            font-size: 13px;
+          }
+        }
+      }
+      .tit {
+        font-size: 18px;
+      }
+      .est-container {
+        margin-top: 7px;
+        height: 220px;
+        .pro {
+          .tet {
+            margin-top: 5px;
+            font-size: 16px !important;
+          }
+          p {
+            font-size: 10px;
+          }
+          .circle {
+            height: 42% !important;
+          }
+        }
+        .grafs {
+          .text-right {
+            top: 4%;
+            font-size: 10px;
+          }
+          .grafcont {
+            height: 90%;
+            margin-bottom: 0;
+            .grafr {
+              margin-left: 0;
+              canvas {
+                width: 80% !important;
+                height: 74% !important;
+              }
+              p {
+                margin-bottom: 5px;
+              }
+            }
+            .grafd {
+              margin-left: -3%;
+              p {
+                margin-bottom: -10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .rowcontinuar {
+      .tit {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .carrusel-elemento {
+        .card {
+          .body-container {
+            margin: 11px 16px;
+            .tit-container {
+              .titt {
+                font-weight: 700;
+                font-size: 15px;
+              }
+            }
+            .circle {
+              width: 34% !important;
+            }
+            .texts {
+              font-weight: 500;
+              font-size: 12px;
+              .t {
+                margin: 0;
+              }
+
+              .a {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    .account {
+      .acc {
+        img {
+          width: 35px;
+        }
+      }
+    }
+    .row {
+      .hello {
+        .text {
+          .nom {
+            font-size: 20px;
+          }
+          .state {
+            font-size: 12px;
+          }
+        }
+      }
+      .tit {
+        margin-top: 5px;
+      }
+      .est-container {
+        flex-direction: column;
+        height: fit-content;
+        .pro {
+          margin-bottom: 10px;
+          flex-direction: row;
+          width: 100%;
+          padding: 3% 5%;
+          .tet {
+            display: block;
+            width: 28%;
+            margin-top: 5px;
+            font-size: 16px !important;
+          }
+          p {
+            display: none;
+          }
+          .circle {
+            height: 80px !important;
+            width: 30% !important;
+          }
+          .orient-respons {
+            display: block;
+          }
+        }
+        .grafs {
+          width: 100% !important;
+          height: 220px;
+          .grafcont {
+            .grafr {
+              margin-left: -5%;
+              margin-top: -20px;
+              p {
+                margin-bottom: 10px;
+              }
+            }
+            .grafd {
+              p {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .rowcontinuar {
+      .tit {
+        font-size: 17px;
+      }
+      .carrusel-elemento {
+        .card {
+          .body-container {
+            margin: 9px 14px;
+            .tit-container {
+              .titt {
+                font-size: 14px;
+              }
+            }
+            .circle {
+              width: 37% !important;
+            }
+            .texts {
+              font-size: 11px;
+              justify-content: center;
+              align-items: center;
+              .t {
+                width: fit-content;
+              }
+
+              .a {
+                width: fit-content;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    .account {
+      right: 6.5%;
+      top: -1%;
+      .acc {
+        img {
+          width: 30px;
+        }
+      }
+    }
+    .row {
+      .hello {
+        .text {
+          .nom {
+            font-size: 18px;
+          }
+          .state {
+            font-size: 11px;
+          }
+        }
+      }
+      .est-container {
+        .pro {
+          padding: 1% 4%;
+          .tet {
+            margin-top: 0;
+            font-size: 14px !important;
+            margin-bottom: 0;
+          }
+          .circle {
+            height: 70px !important;
+            width: 26% !important;
+          }
+          .orient-respons {
+            font-size: 15px;
+            padding: 3px 10px;
+          }
+        }
+        .grafs {
+          height: 535px;
+          .est {
+            font-size: 14px;
+            span {
+              font-size: 11px;
+            }
+          }
+          .text-right {
+            top: 2%;
+          }
+          .grafcont {
+            flex-direction: column;
+            .grafr {
+              margin-left: -5%;
+              margin-top: 15px;
+              margin-bottom: 25px;
+              width: 100% !important;
+              max-width: 100% !important;
+              canvas {
+                width: 90% !important;
+                height: 135px !important;
+              }
+              p {
+                margin-bottom: 14px;
+              }
+            }
+            .grafd {
+              width: 100% !important;
+              max-width: 100% !important;
+              canvas {
+                width: 90% !important;
+                height: 223px !important;
+              }
+              p {
+                margin-top: 20px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .rowcontinuar {
+      .tit {
+        margin-left: 11px;
+      }
+      .carrusel-elemento {
+        .card {
+          .body-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 6px 10px;
+            .tit-container {
+              overflow: hidden;
+              height: 60px;
+              max-height: 60px;
+              justify-content: start;
+              .titt {
+                font-size: 13px;
+              }
+            }
+            .circle {
+              width: 40% !important;
+            }
+            .texts {
+              width: 120%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    .row {
+      .hello {
+        margin-top: 10px;
+        margin-left: 2%;
+      }
+      .est-container {
+        .pro {
+          .orient-respons {
+            font-size: 13px;
+          }
+        }
+        .grafs {
+          height: 530px;
+          .grafcont {
+            .grafd {
+              p {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .rowcontinuar {
+      .carrusel-elemento {
+        .card {
+          .body-container {
+            .texts {
+              width: 140%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

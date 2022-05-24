@@ -1,0 +1,301 @@
+<div class="container">
+  <div class="onloading" [ngStyle]="{'display': onLoadingReport ? 'flex' : 'none'}">
+    <div class="loader"></div>
+    <p>Generando PDF....</p>
+  </div>
+  <div class="onloading" [ngStyle]="{'display': savingAct ? 'flex' : 'none'}">
+    <div class="loader"></div>
+    <p>Guardando....</p>
+  </div>
+
+  <h4>Capítulo {{numMod}}: {{modName}}</h4>
+  <hr
+    style="border:1px;background-color:#8e8e8e88;color:#9d9d9d;height:1px;width:40%;margin-left: auto;margin-right: auto;" />
+
+  <div class="ccontainer">
+
+    <div class="left-container">
+
+      <div class="sub-container">
+        <div class="btn-container">
+
+          <button (click)="onBack()"><img src="https://grapi.growthroad.es:5555/img?imgRef=arrow-down&ext=png"
+              alt=""></button>
+          <button class="toggle-th" (click)="toggleThemes()">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=toggle&ext=png" alt="">
+          </button>
+        </div>
+        <ul [ngStyle]="{'display': themeToggled ? 'none' : 'block'}">
+          <li *ngFor="let th of themeList">
+            <div class="theme">
+              <a [ngClass]="{'active-link': th.num == numThemeActive}" (click)="onChangeTheme(th.num)">
+                <p>TEMA {{th.num}}<span *ngIf="!themeToggled">: {{th.name}}</span></p>
+                <span *ngIf="!themeToggled" class="dot"></span>
+              </a>
+            </div>
+            <div class="subthemes" *ngIf="th.num == numThemeActive">
+              <div class="r-container">
+                <div class="subthemes">
+                  <div class="subtheme" *ngFor="let sbtheme of subthemesList">
+
+                    <div (click)="onChangeSubtheme(sbtheme.numSubtheme)" class="anchor"
+                      [ngClass]="{'active-link': sbtheme.numSubtheme == numSubthemeActive}">
+                      <div class="completed" *ngIf="completed[sbtheme.numSubtheme-1]">
+                        <img src="https://grapi.growthroad.es:5555/img?imgRef=completed&ext=png" alt="">
+                      </div>
+                      <img *ngIf="!completed[sbtheme.numSubtheme-1]"
+                        src="https://grapi.growthroad.es:5555/img?imgRef={{sbtheme.video}}&ext=png" alt="">
+                      <p class="num">{{sbtheme.numSubtheme}} </p>
+                      <p class="txt" *ngIf="!themeToggled"> {{themeList[numThemeActive-1].name}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="right-container"
+      [ngStyle]="{'width': themeToggled ? '87%' : '70%','margin-top': themeToggled ? '5px' : '0','position': themeToggled ? 'absolute' : 'relative','top': themeToggled ? 'absolute' : 'relative'}">
+      <div class="l-container">
+        <div *ngIf="blockTheme" class="block-theme">
+          <p class="tit">No tan rápido...</p>
+          <img src="https://grapi.growthroad.es:5555/img?imgRef=homer&ext=gif" alt="">
+          <p class="text">Tienes que terminar las actividades anteriores para acceder a esta.</p>
+        </div>
+        <div class="pad-container" [ngStyle]="{'opacity': blockTheme ? '0':'1'}">
+          <div class="sb-video-container">
+            <video poster="https://grapi.growthroad.es:5555/img?imgRef={{videoUrl}}&ext=png"
+              class="video-js vjs-default-skin" controls preload="auto" id=videosb>
+              <p>
+                Your browser doesn't support HTML5 video.
+              </p>
+            </video>
+          </div>
+          <div *ngIf="blockCompleted" class="block-completed">
+            <div class="img-container">
+              <img src="https://grapi.growthroad.es:5555/img?imgRef=completed&ext=png" alt="">
+              <p>¡Actividades completadas!</p>
+            </div>
+            <div class="btn-container">
+
+              <button (click)="revise()">REVISAR</button>
+              <!-- Modificar cuando este completa -->
+              <button class="report"
+                *ngIf=" numThemeActive==finT[numMod-1] && numSubthemeActive==finS[numMod-1][numThemeActive-1] && user.license !== 'B'"
+                (click)="onBack()">Menú de modulos</button>
+
+              <button class="report"
+                *ngIf="numMod==1 && numThemeActive==5 && numSubthemeActive==3 && user.license == 'B'"
+                (click)="generateReport()">GENERAR REPORTE</button>
+
+              <button *ngIf="!(numThemeActive==finT[numMod-1] && numSubthemeActive==finS[numMod-1][numThemeActive-1])"
+                (click)="continueAct()">CONTINUAR</button>
+            </div>
+            <p style="text-align: center;" *ngIf="numThemeActive==5 && numSubthemeActive==3 && user.license == 'B'">Fin
+              de la prueba sin costo.</p>
+          </div>
+          <div class="activities" *ngIf="!blockCompleted && !blockTheme && !blockSubtheme">
+            <div class="activity">
+              <div class="activity-container">
+                <p>Reto {{activity.numActivity}}</p>
+                <div class="question" id="question">
+                  <p [innerHtml]="activity.nameActivity"></p>
+                </div>
+                <div *ngIf="activity.ref.length !== 0" class="ref-ans">
+                  <button *ngIf="generatedLink" (click)="generateRefAns()">Refrescar respuestas anteriores</button>
+                  <div class="ref-option" *ngIf="refShow">
+                    <p class="za">En ese reto estas fueron tus respuestas:</p>
+                    <p *ngFor="let item of answerRef">- {{item}}</p>
+                  </div>
+                </div>
+                <div class="option" [ngSwitch]="activity.activityType">
+                  <!-- Texto -->
+                  <div class="texto" *ngSwitchCase="'Texto'">
+                    <img *ngIf="activity.media"
+                      src="https://grapi.growthroad.es:5555/img?imgRef={{activity.media}}&ext=png" alt="">
+                    <textarea [(ngModel)]="texto"></textarea>
+                  </div>
+                  <!-- Video -->
+                  <div class="videoa" *ngSwitchCase="'Video'">
+                    <div class="sb-video-container">
+                      <video preload="auto" class="video-js vjs-default-skin" controls  poster="https://grapi.growthroad.es:5555/img?imgRef={{activity.media}}&ext=png" id=videonormal>
+                        <p>
+                          Your browser doesn't support HTML5 video.
+                        </p>
+                      </video>
+                    </div>
+                    <button (click)="refreshVideo(1)">Ver Vídeo</button>
+                  </div>
+                  <!-- VideoRate -->
+                  <div class="videorate" *ngSwitchCase="'VideoRate'">
+                    <div class="sb-video-container">
+                      <video preload="auto" class="video-js vjs-default-skin" controls id=videorate poster="https://grapi.growthroad.es:5555/img?imgRef={{activity.media}}&ext=png">
+                        <p>
+                          Your browser doesn't support HTML5 video.
+                        </p>
+                      </video>
+                    </div>
+                    <button (click)="refreshVideo(2)">Refrescar Video</button>
+
+                    <div class="rating">
+                      <p>Rating:</p>
+                      <input (change)="onChangeVal($event, 1)" type="range" [value]="answer[0] || 0" min="0" [max]=5
+                        oninput="this.nextElementSibling.value = this.value;">
+                      <output></output>
+                    </div>
+                  </div>
+                  <!-- VideoCheck -->
+                  <div class="videocheck" *ngSwitchCase="'VideoCheck'">
+                    <input type="checkbox" name="" id="" [(ngModel)]="videoSeen">
+                    <p>¿Has vísto el video?</p>
+                  </div>
+                  <!-- Parameters -->
+                  <div class="parameters" *ngSwitchCase="'Parameters'" [ngSwitch]="activity.answers[0]">
+                    <!-- caso parameters avk -->
+                    <button *ngSwitchCase="'avk'" (click)="generateParameters('avk')">Generar parámetros de Sistemas
+                      Sensoriales</button>
+                    <!-- casos parameters intem -->
+                    <button *ngSwitchCase="'intem'" (click)="generateParameters('intem')">Generar parámetros de
+                      Inteligencias Múltiples</button>
+                    <!-- mas casos de parameters -->
+                    <div *ngIf="parametersShow" class="parameters-container">
+                      <div class="parameter" *ngFor="let item of parametersList; let i = index">
+                        <p>{{nameParametersList[i]}}:</p> &nbsp;&nbsp;&nbsp;
+                        <p>{{item}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Enunciado -->
+                  <div *ngSwitchCase="'Enunciado'">
+                  </div>
+                  <!-- Johari -->
+                  <div class="johari" *ngSwitchCase="'Johari'">
+                    <button *ngIf="generatedLink" (click)="generateLinkJohari()">Generar link</button>
+                    <div *ngIf="linkJohariShow" class="container-generated">
+                      <p (click)="copyLink()">{{uriInteraction}}</p>
+                      <button (click)="copyLink()">Copy Data</button>
+                      <span *ngIf="copiedLink">¡Copiado!</span>
+                    </div>
+
+                  </div>
+                  <!-- Interaccion -->
+                  <div class="inter" *ngSwitchCase="'Interaction'">
+                    <button *ngIf="generatedLink" (click)="generateInteraction(activity.answers[0])">Generar
+                      resultados</button>
+                    <div *ngIf="interactionShow" class="container-interaction">
+                      <p *ngFor="let item of interactionResult">{{item}}</p>
+                    </div>
+
+
+                  </div>
+                  <!-- Seleccionador -->
+                  <div class="selection" *ngSwitchCase="'Seleccionador'">
+                    <div class="cbox" *ngFor="let ans of activity.answers; index as i">
+                      <input id="{{i+1}}" [disabled]="answer.length == activity.limit && !isChecked(i+1) "
+                        [checked]="isChecked(i+1)" type="checkbox" value={{i+1}} (change)="onChange($event)">
+                      <label for="{{i+1}}">
+                        <p>{{ans}}</p>
+                      </label>
+                    </div>
+                  </div>
+                  <!-- Seleccionador -->
+                  <div class="selectionv2" *ngSwitchCase="'Seleccionadorv2'">
+                    <div class="cbox" *ngFor="let ans of activity.answers; index as i">
+                      <input id="{{i+1}}" [disabled]="answer.length == activity.limit && !isChecked(i+1) "
+                        [checked]="isChecked(i+1)" type="checkbox" value={{i+1}} (change)="onChange($event)">
+                      <label for="{{i+1}}">
+                        <p>{{ans}}</p>
+                      </label>
+                    </div>
+                  </div>
+                  <!-- lista -->
+                  <div class="lista" *ngSwitchCase="'Lista'">
+                    <div class="inp-list">
+                      <input type="text" [(ngModel)]="itemList">
+                      <div class="add" (click)="addItemToList()">+</div>
+                    </div>
+                    <div class="results">
+                      <div class="item-list" *ngFor="let item of listItemsLista">
+                        <p>{{item}}</p>
+                        <div (click)="deleteItemList(item)" class="delete">
+                          <p>X</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Feedback -->
+                  <div class="fb" *ngSwitchCase="'Feedback'">
+                    <textarea [(ngModel)]="fbTexto"></textarea>
+                    <p>Esta pregunta es de feedback para nosotros, y se almacena anónimamente para su uso.</p>
+                  </div>
+                  <!-- Valoracion -->
+                  <div class="valor" *ngSwitchCase="'Valoracion'">
+                    <div class="vbox" *ngFor="let ans of activity.answers; index as i">
+                      <p>{{ans}}</p>
+                      <div class="inp-container">
+
+                        <input type="range" [defaultValue]="answer[i] || 0" [max]="activity.limit" min="0"
+                          (change)="onChangeVal($event, i+1)" oninput="this.nextElementSibling.value = this.value;">
+                        <output></output>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="error" *ngIf="cardError">
+                  {{cardError}}
+                </div>
+              </div>
+              <div class="progressact-container">
+
+                <div class="progress-baract">
+                  <div class="bar">
+
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                      aria-valuemin="0" aria-valuemax="100"
+                      style="height: 30px; border-radius: 100px; background-color: rgb(14, 165, 112);"
+                      [ngStyle]="{'width': (numActivity+1)/(activitiesList.length)*100+'%'}"></div>
+                  </div>
+                  <div class="numact">{{numActivity+1}}/{{activitiesList.length}}</div>
+                </div>
+
+                <div class="btn-container">
+
+
+                  <button (click)="onActBack(activity.activityType)" *ngIf="numActivity > 0">Atrás</button>
+                  <button (click)="onActNext(activity.activityType)"
+                    *ngIf="numActivity < activitiesList.length-1 && !last">Siguiente</button>
+                  <button (click)="onSave(activity.activityType)"
+                    *ngIf="numActivity == activitiesList.length-1 && !last && !saving">Guardar</button>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+<!--
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Error de credenciales</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p></p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cerrar</button>
+  </div>
+</ng-template> -->

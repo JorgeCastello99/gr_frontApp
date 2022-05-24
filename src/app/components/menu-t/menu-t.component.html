@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="toggler">
+    <div class="menuToggle">
+      <input (change)="onToggle($event)" #inptoggle class="inp-toggle" type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="menu-container" >
+      <div class="isot">
+        <img src="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png" alt="" >
+        <h1>{{gr}}</h1>
+      </div>
+      <ul class="navmenu">
+        <!-- Navegar a home -->
+        <li>
+          <div class="nav-link"  (click)="goX()" [routerLinkActive]="'active'" [routerLink]="['/platform/teachers/clases']" >
+            <div class="nav-item">
+              <img src="https://grapi.growthroad.es:5555/img?imgRef=progress&ext=png" alt="" >
+              {{clases}}
+              <span class="dot"></span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="nav-link" (click)="goX()"  [routerLinkActive]="'active'" [routerLink]="['/platform/home/vcoach']">
+            <div class="nav-item">
+              <img src="https://grapi.growthroad.es:5555/img?imgRef=vcoach&ext=png" alt="" >
+              {{vcoach}}
+              <span class="dot"></span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="logout">
+        <a (click)="onClose()">
+          <img src="https://grapi.growthroad.es:5555/img?imgRef=logout&ext=png" alt="">
+          <p>Cerrar Sesión</p>
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+  <div class="body-container">
+
+    <div class="left-container">
+      <div class="menu-container" >
+        <div class="isot">
+          <img src="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png" alt="" >
+          <h1>{{gr}}</h1>
+        </div>
+        <ul class="navmenu">
+          <li>
+            <div class="nav-link"  (click)="goX()" [routerLinkActive]="'active'" [routerLink]="['/platform/teacher/clases']" >
+              <div class="nav-item">
+                <img src="https://grapi.growthroad.es:5555/img?imgRef=progress&ext=png" alt="" >
+                {{clases}}
+                <span class="dot"></span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="nav-link"  [routerLinkActive]="'active'" [routerLink]="['/platform/teacher/vcoach']">
+              <div class="nav-item">
+                <img src="https://grapi.growthroad.es:5555/img?imgRef=vcoach&ext=png" alt="" >
+                {{vcoach}}
+                <span class="dot"></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="prem">
+          <div class="prem-container">
+            <p >¡Accede a premium!</p>
+            <span >Accede ahora al programa completo para desbloquear todo el contenido.</span>
+            <img  src="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png" alt="">
+          </div>
+        </div>
+        <div class="logout">
+          <a (click)="onClose()">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=logout&ext=png" alt="">
+            <p>Cerrar Sesión</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div [ngStyle]="{'margin-left': mlContainerToggle, 'margin-right': mrContainerToggle}" class="right-container">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>

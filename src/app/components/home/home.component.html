@@ -1,0 +1,129 @@
+<div class="container" #containerWindow>
+  <div class="account">
+    <!-- <div class="noti">
+      <img src="../../../assets/img/notis.svg" alt="">
+      <span class="num">
+        99+
+      </span>
+    </div> -->
+    <!-- <div class="acc">
+      <a>
+        <img src="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png" alt="">
+      </a>
+    </div> -->
+  </div>
+  <div class="row">
+    <div class="hello">
+      <div class="text">
+        <p class="nom">¡Bienvenid@ de nuevo, {{name}}!</p>
+        <p class="state">{{state}}</p>
+      </div>
+      <!-- <div class="inp-look">
+        <div class="inp-container">
+          <img src="" alt="">
+          <input type="text">
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="est-container">
+      <div class="pro">
+        <p class="tet">Mi progreso</p>
+        <div class="circle">
+          <circle-progress [percent]="prog" [radius]="40" [outerStrokeWidth]="6" [innerStrokeWidth]="0"
+            [outerStrokeColor]="'#bb00ff'"
+            [outerStrokeGradient]=true
+            [outerStrokeGradientStopColor]="'#ff00d4'"
+            [titleColor]="'#ff00d4'"
+            [unitsColor]="'#ff00d4'"
+            [titleFontWeight]="'700'"
+            [unitsFontWeight]="'700'"
+            [responsive]=true [showSubtitle]=false [unitsFontSize]="'12'"
+            [titleFontSize]="'20'" [animation]="true" [animationDuration]="300"></circle-progress>
+        </div>
+        <p>{{progressText}}</p>
+        <button (click)="onOrientation()" class="orient-respons">Ir a orientación</button>
+      </div>
+      <div class="grafs">
+        <p class="est">Estadísticas <span>Datos generados por la IA</span></p>
+        <p class="text-right">Ver todo</p>
+        <div class="grafcont">
+          <div class="grafr">
+            <p>Tus Intereses Vocacionales</p>
+            <canvas baseChart [colors]="radarChartColors" [datasets]="radarChartData" [options]="radarChartOptions" [labels]="radarChartLabels"
+              [chartType]="radarChartType">
+            </canvas>
+          </div>
+          <div class="grafd">
+            <p>Tus Aptitudes Profesionales</p>
+            <canvas baseChart [colors]="colors" [datasets]="doughnutChartData" [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType" [options]="dougOptions">
+            </canvas>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="carousel-container">
+        <img src="" alt="">
+        <div id="carouselI" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselI" data-bs-slide-to="0" class="active" aria-current="true"
+              aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselI" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselI" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card">
+                <div class="body-container">
+                  <div class="text-container">
+                    <h6>Beta gratuita</h6>
+                    <p class="text">Disfruta de la prueba gratuita que ofrecemos para que conozcas el alcance de la
+                      plataforma. Estaremos encantados de recibir cualquier tipo de feedback en: <a
+                        href="mailto:growthroadmanagement@gmail.com">growthroadmanagement@gmail.com</a>. Vuelve otro día
+                      para ver las nuevas actualizaciones.</p>
+                    <p class="fecha">17-03-2021</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <div class="rowcontinuar">
+    <p class="tit">Continuar viendo</p>
+    <div class="btn-pn">
+      <div class="btnc prev" (click)="btnPrevCar()"><</div>
+      <div  class="btnc next" (click)="btnNextCar()">>
+     </div>
+    </div>
+    <div class="carrusel">
+
+
+      <div class="carrusel-elemento" *ngFor="let mod of modLS">
+        <div [routerLink]="['/platform/home/orientation/vocation/',mod.num]" class="card" [ngStyle]="{'background-image': 'url('+imagenArray[mod.num-1]+')'}">
+          <div class="body-container">
+            <div class="tit-container">
+              <p class="titt">Capítulo: {{mod.num}}</p>
+              <p class="titt">{{mod.name}}</p>
+            </div>
+            <div class="circle">
+              <circle-progress [backgroundColor]="'#ffffff41'" [unitsColor]="'#ffffff'" [backgroundPadding]="-4"
+                [toFixed]="0" [percent]="mod.perc" [radius]="20" [outerStrokeWidth]="3" [innerStrokeWidth]="1" [space]="0"
+                [outerStrokeColor]="'#ffffff'" [innerStrokeColor]="'#ffffff'" [responsive]=true [showSubtitle]=false
+                [unitsFontSize]="'8'" [titleFontSize]="'8'" [animation]="true" [titleColor]="'#ffffff'"
+                [animationDuration]="300"></circle-progress>
+            </div>
+            <div class="texts">
+              <p class="t">{{userProgressT[mod.num-1]}}/{{finT[mod.num-1]}} Temas</p>
+              <p class="a">{{arrayProgressS[mod.num-1]}}/{{arrayProgressSTotal[mod.num-1]}} Subtemas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

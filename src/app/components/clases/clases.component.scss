@@ -1,0 +1,143 @@
+.container {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+  margin-left: 85px;
+  margin-top: 30px;
+
+  .class {
+    display: flex;
+    width: 90%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+
+    p {
+      font-size: 25px;
+      cursor: default;
+    }
+
+    .buttonstop {
+      display: flex;
+
+      .btn {
+        background-color: #a9aca9;
+        border: 1px solid #080808;
+        border-radius: 8px;
+        color: white;
+        width: 200px;
+        height: 45px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .buttonsbot {
+    align-items: center;
+    display: inline-block;
+    width: 90%;
+
+    .btn {
+      background-color: #808880;
+      border: 1px solid #080808;
+      border-radius: 7px;
+      color: white;
+      width: 180px;
+      height: 40px;
+      margin-right: 25px;
+
+    }
+
+    .btn.delete {
+      width: 130px;
+      margin-right: 0px;
+      float: right;
+    }
+
+  }
+
+
+
+  .scroll-table {
+    width: 94%;
+    overflow-y: auto;
+
+    max-height: 520px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    cursor: default;
+
+    thead tr {
+      position: sticky;
+      background-color: #ffffff;
+      top: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 8px 16px;
+      border: none;
+      text-align: center;
+    }
+
+    th {
+      background: rgb(248, 248, 248);
+      box-shadow: -1px 8px 16px 1px #9d9d9d66;
+
+
+    }
+
+    tbody img {
+      width: 20px;
+      cursor: pointer;
+    }
+
+    input {
+      cursor: pointer;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: rgba(221, 221, 221, 0.514);
+    }
+
+    tbody tr:hover {
+      background: rgb(255, 235, 185);
+
+    }
+  }
+
+  .p2 {
+    margin-right: 100px;
+    float: right;
+    cursor: default;
+  }
+
+}
+
+//Comprobar en navegador firefox
+//diseño scroll
+::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 15px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}

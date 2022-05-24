@@ -1,0 +1,160 @@
+<div class="forbidden" *ngIf="failCode">
+  <img src="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png" alt="">
+  <p>Link no válido</p>
+</div>
+<div class="container" *ngIf="!failCode">
+  <div class="headr">
+    <div class="logo">
+      <p>A product by</p>
+      <img src="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png" alt="">
+      <span>GrowthRoad</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card" [ngSwitch]="numberProgress">
+      <div class="col" *ngSwitchCase="1">
+        <img src="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png" alt="">
+        <span>¡Muchas gracias!</span>
+        <p>{{nameStudent}} te ha pedido que rellenes este formulario, necesita que le eches una mano para trabajar con
+          una herramienta de <span>Growth Road</span> que potencia el autoconocimiento.</p>
+        <div class="btn-container">
+          <button (click)="chooseTypeUser('friend')">Soy amig@</button>
+          <button (click)="chooseTypeUser('familiar')">Soy familiar</button>
+        </div>
+      </div>
+      <div class="col" *ngSwitchCase="2">
+        <p>{{nameStudent}} se ha embarcado en un <span>viaje fascinante para descubrir su vocación</span> y va a llenar
+          su curriculum de experiencias vitales en el camino.</p>
+        <div class="sb-video-container">
+          <div #videoschange>
+            <div class="screen-relativ">
+              <video [volume]="volumeBar" preload="none" id="media" #videos (click)="playPause()" poster="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png"
+                (timeupdate)="timeUpdVideo()">
+                <source  [sizes]="" [src]="'https://grapi.growthroad.es:5555/noauth/video?vid=intro_voc&ext=mp4&qual='+videoQual" type="video/mp4"
+                  media="all and (max-width: 480px)">
+                <p>
+                  Your browser doesn't support HTML5 video.
+                </p>
+              </video>
+              <div class="video-controls">
+                <button type="button" id="play-pause" (click)="playPause()"><img src="https://grapi.growthroad.es:5555/img?imgRef={{imgPp}}&ext=png"
+                    alt=""></button>
+                <input (mousedown)="dragDown()" (mouseup)="dragUp()" (change)="changeDuration()" type="range" id="seek-bar" value="0" [(ngModel)]="seekBar">
+                <button type="button" id="mute" (click)="muteVideo()"><img src="https://grapi.growthroad.es:5555/img?imgRef={{imgMute}}&ext=png"
+                    alt=""></button>
+                <input (change)="changeVolume()" type="range" id="volume-bar" min="0" max="1" step="0.1" value="1"
+                  [(ngModel)]="volumeBar">
+                <button class="quality" (click)="showQuals()"><img src="https://grapi.growthroad.es:5555/img?imgRef=settings&ext=png" alt="">
+                  <div [ngStyle]="{'display': showQual ? 'block' : 'none'}" class="container-quals">
+                    <div class="col">
+                      <button [ngClass]="{'active': videoQual === 1080}"  (click)="changeQual(1080)">1080p</button>
+                    </div>
+                    <div class="col">
+                      <button [ngClass]="{'active': videoQual === 720}"  (click)="changeQual(720)">720p</button>
+                    </div>
+                    <div class="col">
+                      <button [ngClass]="{'active': videoQual === 480}"  (click)="changeQual(480)">480p</button>
+                    </div>
+                    <div class="col">
+                      <button [ngClass]="{'active': videoQual === 360}"  (click)="changeQual(360)">360p</button>
+                    </div>
+                  </div>
+                </button>
+                <button type="button" id="full-screen" (click)="fullVideo()"><img src="https://grapi.growthroad.es:5555/img?imgRef=full-screen&ext=png"
+                    alt=""></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text">Después de ver el vídeo porfavor haz click en continuar para iniciar el formulario.</div>
+        <button (click)="continue()">Continuar</button>
+      </div>
+      <div class="col" *ngSwitchCase="3">
+        <p class="smaller">Para responder a este formulario sobre <span class="smaller">{{nameStudent}}</span> tendrás
+          como opciones estos 4 emoticonos:</p>
+        <div class="icons">
+          <div class="icon">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=poop&ext=png" alt="">
+            <p>No coincide en nada </p>
+          </div>
+          <div class="icon">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=indiferente&ext=png" alt="">
+            <p>Coincide muy poco </p>
+          </div>
+          <div class="icon">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=feliz&ext=png" alt="">
+            <p>Coincide bastante</p>
+          </div>
+          <div class="icon">
+            <img src="https://grapi.growthroad.es:5555/img?imgRef=encantado&ext=png" alt="">
+            <p>Coincide completamente </p>
+          </div>
+        </div>
+        <div class="text">
+          Responde con la <span>máxima sinceridad, solo de esa manera le ayudas de verdad.</span>
+        </div>
+        <button (click)="continue()">Continuar</button>
+        <button (click)="back()" class="lwh">Volver</button>
+      </div>
+      <div class="question" *ngSwitchCase="4">
+        <div class="first-tut" *ngIf="numActivity == 1">Selecciona una opción y haz click a continuar.</div>
+        <p>Pregunta {{numActivity}}</p>
+        <div class="activity-container">
+          <div class="bocat">
+            <div class="ask" [ngSwitch]="numActivity">
+              <p *ngSwitchCase="1">{{nameStudent}} ha dicho que tiene esta cualidad: {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="2">{{nameStudent}} ha dicho que tiene esta cualidad: {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="3">{{nameStudent}} ha dicho que tiene esta cualidad: {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="4">{{nameStudent}} ha dicho que tiene esta cualidad: {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="5">{{nameStudent}} ha dicho que tiene esta cualidad: {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="6">{{nameStudent}} ha dicho que es una persona {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="7">{{nameStudent}} ha dicho que es una persona {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="8">{{nameStudent}} ha dicho que es una persona {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="9">{{nameStudent}} ha dicho que es una persona {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="10">{{nameStudent}} ha dicho que es una persona {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="11">{{nameStudent}} ha dicho que es una persona {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="12">{{nameStudent}} ha dicho que es una persona {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="13">{{nameStudent}} ha dicho que no se considera una persona : {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="14">{{nameStudent}} ha dicho que no se considera una persona : {{userAnswers[numActivity-1]}}</p>
+              <p *ngSwitchCase="15">{{nameStudent}} ha dicho que no se considera una persona : {{userAnswers[numActivity-1]}}</p>
+            </div>
+          </div>
+          <div class="inp-container">
+            <div class="col">
+              <img src="https://grapi.growthroad.es:5555/img?imgRef=poop&ext=png" alt="">
+              <input id="inp1" type="radio" name="tast" value="1" (change)="changeInput($event)">
+            </div>
+            <div class="col">
+              <img src="https://grapi.growthroad.es:5555/img?imgRef=indiferente&ext=png" alt="">
+              <input id="inp2" type="radio" name="tast" value="2" (change)="changeInput($event)">
+            </div>
+            <div class="col">
+              <img src="https://grapi.growthroad.es:5555/img?imgRef=feliz&ext=png" alt="">
+              <input id="inp3" type="radio" name="tast" value="3" (change)="changeInput($event)">
+            </div>
+            <div class="col">
+              <img src="https://grapi.growthroad.es:5555/img?imgRef=encantado&ext=png" alt="">
+              <input id="inp4" type="radio" name="tast" value="4" (change)="changeInput($event)">
+            </div>
+          </div>
+
+        </div>
+        <p class="error">{{errorAct}}</p>
+        <div class="btn-container">
+          <button class="back-button" (click)="moveBack()">Volver</button>
+          <button class="next-button" *ngIf="numActivity < 15" (click)="moveNext()">Continuar</button>
+          <button class="next-button save" (click)="saveOpinions()" *ngIf="numActivity == 15">Guardar respuestas</button>
+        </div>
+      </div>
+      <div class="question" *ngSwitchCase="5">
+        <p class="final">Tus respuestas han sido enviadas</p>
+        <p class="thanks">Muchas gracias por tu colaboración. Estas respuestas que nos has proporcionado serán de gran ayuda para la perosna que te lo ha pedido, en la búsqueda de su vocación.<br>Obtén más información sobre el método Growth Road haciendo click en el botón de abajo.</p>
+        <div class="fix"><button (click)="remake()" class="again">Responder formulario de nuevo</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="back" *ngIf="backShow" style="background-image: url('https://grapi.growthroad.es:5555/img?imgRef=fondo&ext=png');"></div>
+
+<!-- 1 = muchas gracias, soy amigo soy familiar(guardar que es)
+2 = video y continuar -->

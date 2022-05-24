@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="tab-container">
+    <div class="tabmr">
+      <div class="tab"  routerLinkActive="active-link">
+        <a [routerLink]="['/platform/home/orientation/vocation']">
+          <div class="texts">
+            <p>Temporada 1:</p>
+            <p>Orientación Vocacional</p>
+          </div>
+         <span class="dot"></span>
+        </a>
+      </div>
+      <div class="tab"  routerLinkActive="active-link">
+        <a [routerLink]="['/platform/home/orientation/profesion']">
+          <div class="texts">
+            <p>Temporada 2:</p>
+            <p>Orientación Profesional</p>
+          </div>
+       <span class="dot"></span>
+        </a>
+      </div>
+      <div class="tab" routerLinkActive="active-link">
+        <a [routerLink]="['/platform/home/orientation/experience']" >
+          <div class="texts">
+            <p>Temporada 3:</p>
+            <p>Experiencias</p>
+          </div>
+       <span class="dot"></span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <div class="rout-orient">
+    <router-outlet></router-outlet>
+  </div>
+</div>
