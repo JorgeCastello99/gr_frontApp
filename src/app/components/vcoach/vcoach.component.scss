@@ -1,23 +1,23 @@
-.containerc{
-  margin: 40px 70px;
+.containerc {
+  margin: 50px 70px;
 
-  height: 80vh;
+  height          : 80vh;
   background-color: rgb(215, 215, 215);
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  border-radius: 15px;
+  align-items     : center;
+  display         : flex;
+  justify-content : center;
+  border-radius   : 15px;
 
-  P{
-    font-size: 55px;
+  P {
+    font-size  : 55px;
     //animation:spin 0.3s linear normal;
 
   }
 }
 
 @media (max-width: 800px) {
-  .containerc{
-    P{
+  .containerc {
+    P {
       font-size: 35px;
     }
   }
@@ -25,9 +25,10 @@
 
 @media (max-width: 500px) {
 
-  .containerc{
+  .containerc {
     margin: 40px 40px;
-    P{
+
+    P {
       font-size: 30px;
     }
   }
@@ -35,8 +36,8 @@
 
 @media (max-width: 350px) {
 
-  .containerc{
-    P{
+  .containerc {
+    P {
       font-size: 22px;
     }
   }

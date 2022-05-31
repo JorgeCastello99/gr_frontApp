@@ -1,73 +1,85 @@
 .container {
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+  width          : 100%;
+  max-width      : 100%;
+  padding        : 0;
+  margin         : 0;
+  display        : flex;
+  flex-direction : column;
   justify-content: center;
-  align-items: center;
+  align-items    : center;
 
   .group {
-    margin-top: 70px;
+    margin-top: 50px;
+
     .row {
-      margin: 0 auto;
-      height: fit-content;
-      padding: 0;
-      width: 100%;
-      display: flex;
+      margin         : 0 auto;
+      height         : fit-content;
+      padding        : 0;
+      width          : 100%;
+      display        : flex;
       justify-content: center;
-      align-items: center;
+      align-items    : center;
+
       .col-4 {
         background-color: #49d9be;
 
         border-radius: 15px;
-        padding: 0;
-        margin: 10px 10px;
-        width: 29% !important;
-        height: 250px;
+        padding      : 0;
+        margin       : 10px 10px;
+        width        : 29% !important;
+        height       : 250px;
+
         .anch {
           text-decoration: none;
-          color: black;
-          text-align: center;
+          color          : black;
+          text-align     : center;
+
           .mod {
             margin-top: 15px;
           }
+
           p {
             margin-bottom: 0px;
-            color: white;
-            font-size: 17px;
-            font-weight: 700;
+            color        : white;
+            font-size    : 17px;
+            font-weight  : 700;
           }
+
           .circle-container {
-            margin-top: 30px;
+            margin-top   : 30px;
             margin-bottom: 10px;
+
             .circle {
-              width: 45%;
+              width : 45%;
               margin: 20px auto;
             }
           }
         }
+
         .card {
-          border-radius: 15px;
-          height: 100%;
-          text-align: center;
-          background-size:cover ;
+          border-radius      : 15px;
+          height             : 100%;
+          text-align         : center;
+          background-size    : cover;
           background-position: center;
+
           .mod {
             margin-top: 15px;
           }
+
           p {
             margin-bottom: 0;
-            color: white;
-            font-size: 17px;
-            font-weight: 700;
+            color        : white;
+            font-size    : 17px;
+            font-weight  : 700;
           }
+
           .img-container {
-            display: flex;
+            display        : flex;
             justify-content: center;
-            margin-bottom: 30px;
-            margin-top: auto;
+            margin-bottom  : 30px;
+            margin-top     : auto;
+
             img {
               margin-top: -10px;
             }
@@ -82,41 +94,51 @@
   .container {
     .group {
       margin-top: 50px;
+
       .row {
         .col-4 {
           height: 210px;
+
           .anch {
             text-decoration: none;
-            color: black;
+            color          : black;
 
             .mod {
               margin-top: 15px;
             }
+
             p {
               font-size: 15px;
             }
+
             .circle-container {
-              margin-top: 28px;
+              margin-top   : 28px;
               margin-bottom: 9px;
+
               .circle {
-                width: 45%;
+                width : 45%;
                 margin: 20px auto;
               }
             }
           }
+
           .card {
             height: 210px;
+
             .mod {
               margin-top: 15px;
             }
+
             p {
               font-size: 15px;
             }
+
             .img-container {
               margin-bottom: 25px;
+
               img {
                 height: 90px;
-                width: 70px;
+                width : 70px;
               }
             }
           }
@@ -125,20 +147,24 @@
     }
   }
 }
+
 @media (max-width: 1000px) {
   .container {
     .group {
       margin-top: 0;
+
       .row {
         .col-4 {
           height: 210px;
+
           .anch {
             text-decoration: none;
-            color: black;
+            color          : black;
 
             .mod {
               margin-top: 15px;
             }
+
             p {
               font-size: 15px;
             }
@@ -173,29 +199,36 @@
     .group {
       .row {
         .col-4 {
-          width: 36% !important;
+          width : 36% !important;
           height: 190px;
-          .anch{
-            .mod{
+
+          .anch {
+            .mod {
               margin-top: 10px;
             }
-            p{
+
+            p {
               font-size: 14px;
             }
           }
+
           .card {
             height: 190px;
-            .mod{
+
+            .mod {
               margin-top: 10px;
             }
-            p{
+
+            p {
               font-size: 14px;
             }
+
             .img-container {
               margin-bottom: 40px;
-              img{
+
+              img {
                 height: 70px;
-                width: 50px;
+                width : 50px;
               }
             }
           }
@@ -211,24 +244,28 @@
     .group {
       .row {
         .col-4 {
-          width: 40% !important;
+          width : 40% !important;
           height: 170px;
-          .anch{
-            p{
+
+          .anch {
+            p {
               font-size: 13px;
             }
           }
+
           .card {
             height: 170px;
 
-            p{
+            p {
               font-size: 13px;
             }
+
             .img-container {
               margin-bottom: 25px;
-              img{
+
+              img {
                 height: 70px;
-                width: 50px;
+                width : 50px;
               }
             }
           }

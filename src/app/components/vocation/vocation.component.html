@@ -1,35 +1,24 @@
 <div class="container">
   <div class="group">
     <div class="row">
-      <div class="col-4"  *ngFor="let mod of modList">
-        <div class="anch" *ngIf="mod.num == 1 || license=='A'" style="cursor: pointer;" [routerLink]="['/platform/home/orientation/vocation/', mod.num]">
+      <div class="col-4" *ngFor="let mod of modList">
+        <div class="anch" *ngIf="mod.num == 1 || license=='A'" style="cursor: pointer;"
+          [routerLink]="['/platform/home/orientation/vocation/', mod.num]">
           <p class="mod">Capítulo: {{mod.num}}</p>
           <p>{{mod.name}}</p>
           <div class="circle-container">
             <div class="circle">
-              <circle-progress
-              [backgroundColor]="'#ffffff41'"
-              [unitsColor]="'#ffffff'"
-              [backgroundPadding]="-4"
-              [toFixed]="0"
-              [percent]="arrayProgressS[mod.num-1]/arrayProgressSTotal[mod.num-1]*100"
-              [radius]="20"
-              [outerStrokeWidth]="3"
-              [innerStrokeWidth]="1"
-              [space]="0"
-              [outerStrokeColor]="'#ffffff'"
-              [innerStrokeColor]="'#ffffff'"
-              [responsive]=true
-              [showSubtitle]=false
-              [unitsFontSize]="'8'"
-              [titleFontSize]="'8'"
-              [animation]="true"
-              [titleColor]="'#ffffff'"
-              [animationDuration]="300"></circle-progress>
+              <circle-progress [backgroundColor]="'#ffffff41'" [unitsColor]="'#ffffff'" [backgroundPadding]="-4"
+                [toFixed]="0" [percent]="arrayProgressS[mod.num-1]/arrayProgressSTotal[mod.num-1]*100" [radius]="20"
+                [outerStrokeWidth]="3" [innerStrokeWidth]="1" [space]="0" [outerStrokeColor]="'#ffffff'"
+                [innerStrokeColor]="'#ffffff'" [responsive]=true [showSubtitle]=false [unitsFontSize]="'8'"
+                [titleFontSize]="'8'" [animation]="true" [titleColor]="'#ffffff'" [animationDuration]="300">
+              </circle-progress>
             </div>
           </div>
         </div>
-        <div class="card" *ngIf="mod.num > 1  && license=='B'"  [ngStyle]="{'background-image': 'url('+imagenArrayA[mod.num-1]+')'}">
+        <div class="card" *ngIf="mod.num > 1  && license=='B'"
+          [ngStyle]="{'background-image': 'url('+imagenArrayA[mod.num-1]+')'}">
           <p class="mod">Capítulo: {{mod.num}}</p>
           <p>{{mod.name}}</p>
           <div class="img-container">
@@ -37,7 +26,7 @@
           </div>
         </div>
       </div>
+    </div>
   </div>
-</div>
 
 </div>
