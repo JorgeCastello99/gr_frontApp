@@ -1,0 +1,57 @@
+//? -------- INDEX (V1) ----------
+//? -btn
+//? -card
+//? ______________________________
+
+
+
+.btn {
+  border          : 0;
+  background-color: transparent;
+  font-size       : 15px;
+  cursor          : pointer;
+  padding         : 3px 13px;
+  border-radius   : 5px;
+
+  &--action {
+    color           : white;
+    background-color: $accent_primary;
+    font-weight     : bold;
+    border          : 0;
+  }
+
+  &--cancel {
+    color: $accent_primary;
+
+    &:hover {
+      background-color: rgba(186, 0, 186, 0.22);
+    }
+  }
+
+  transition: all .5s ease;
+}
+
+.card {
+  background-color: white;
+  border-radius   : 15px;
+  padding         : 30px 40px 40px 40px;
+  width           : 40%;
+  position        : relative;
+
+  &__body {
+    text-align : left;
+    font-weight: 300;
+    font-size  : 18px;
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__footer {
+    display        : flex;
+    justify-content: center;
+    gap            : 3rem;
+    margin-top     : 4rem;
+  }
+}
