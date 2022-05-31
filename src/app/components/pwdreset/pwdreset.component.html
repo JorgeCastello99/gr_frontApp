@@ -21,11 +21,13 @@
         <h4>Nuevas contraseñas</h4>
         <div class="pwd">
           <input [(ngModel)]="pwd1" [type]="pwdVis1 ? 'text' : 'password'" placeholder="Introduce la nueva contraseña">
-          <button (click)="toggleVisibility(1)"><img src="https://grapi.growthroad.es:5555/img?imgRef=eye&ext=png" alt=""></button>
+          <button (click)="toggleVisibility(1)"><img src="https://grapi.growthroad.es:5555/img?imgRef=eye&ext=png"
+              alt=""></button>
         </div>
         <div class="pwd">
           <input [(ngModel)]="pwd2" [type]="pwdVis2 ? 'text' : 'password'" placeholder="Repite la nueva contraseña">
-          <button (click)="toggleVisibility(2)"><img src="https://grapi.growthroad.es:5555/img?imgRef=eye&ext=png" alt=""></button>
+          <button (click)="toggleVisibility(2)"><img src="https://grapi.growthroad.es:5555/img?imgRef=eye&ext=png"
+              alt=""></button>
         </div>
         <span class="lastspan">{{emailError}}</span>
         <button (click)="postPwd()">Actualizar contraseña</button>

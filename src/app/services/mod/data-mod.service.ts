@@ -46,7 +46,7 @@ export class DataModService {
   },
   ]
 
-  maxThemes = [5,2,9,4,6,5]
+  maxThemes = [5, 2, 9, 4, 6, 5]
 
 
   themeList = [
@@ -117,7 +117,7 @@ export class DataModService {
         num: '8'
       },
       {
-        name:'IKIGAI',
+        name: 'IKIGAI',
         num: '9'
       }
 
@@ -184,66 +184,66 @@ export class DataModService {
         num: '4',
       },
       {
-        name:'ESTUDIO INTERNACIONAL',
-        num:'5'
+        name: 'ESTUDIO INTERNACIONAL',
+        num: '5'
       }
     ],
   ]
 
-  maxSubTotal= [12,7,34,20,24,14]
-  maxSubThemes = [[4,1,3,1,3],
-    [5,2],
-    [4,3,4,9,4,2,2,3,3],
-    [9,2,5,4],
-    [6,6,3,2,2,5],
-    [2,2,3,5,2]
+  maxSubTotal = [12, 7, 34, 20, 24, 14]
+  maxSubThemes = [[4, 1, 3, 1, 3],
+  [5, 2],
+  [4, 3, 4, 9, 4, 2, 2, 3, 3],
+  [9, 2, 5, 4],
+  [6, 6, 3, 2, 2, 5],
+  [2, 2, 3, 5, 2]
   ]
-  paramAVK = ["Auditivo","Visual","Kinestésico"]
-  paramInteM = ["Lingüistica","Lógico-Matemáticas","Espacial","Cinética-Corporal","Musical","Interpersonal","Intrapersonal","Naturalista"]
+  paramAVK = ["Auditivo", "Visual", "Kinestésico"]
+  paramInteM = ["Lingüistica", "Lógico-Matemáticas", "Espacial", "Cinética-Corporal", "Musical", "Interpersonal", "Intrapersonal", "Naturalista"]
   paramProf = ["Técnico-Manual", "Científico-Investigador", "Artístico-Creativo", "Social-Asistencial", "Empresarial-Persuasivo", "Administración-Gestión", "Digital/Virtual-Streamer"]
   paramVoc = ["Técnico", "Investigador", "Emprendedor", "Comunicador", "Analista"]
-  paramPer = ["Perfeccionista", "Altruista","Activo","Afectivo","Racional","Escéptico","Entusiasta","Líder","Mediador"]
-  paramInteE = ["Autoconciencia","Empatía","Autoconfianza","Motivación","Autocontrol","Habilidades Sociales"]
-  paramEstApr = ["Activo","Teórico","Reflexivo","Pragmático"]
+  paramPer = ["Perfeccionista", "Altruista", "Activo", "Afectivo", "Racional", "Escéptico", "Entusiasta", "Líder", "Mediador"]
+  paramInteE = ["Autoconciencia", "Empatía", "Autoconfianza", "Motivación", "Autocontrol", "Habilidades Sociales"]
+  paramEstApr = ["Activo", "Teórico", "Reflexivo", "Pragmático"]
 
 
-  getMaxSubTotal(){
+  getMaxSubTotal() {
     return this.maxSubTotal
   }
-  getParamsEstApr(){
+  getParamsEstApr() {
     return this.paramEstApr
   }
-  getParamsInteE(){
+  getParamsInteE() {
     return this.paramInteE
   }
-  getParamsPer(){
+  getParamsPer() {
     return this.paramPer
   }
-  getParamProf(){
+  getParamProf() {
     return this.paramProf
   }
-  getParamVoc(){
+  getParamVoc() {
     return this.paramVoc
   }
 
-  getParamIntem(){
+  getParamIntem() {
     return this.paramInteM
   }
-  getParamAVK(){
+  getParamAVK() {
     return this.paramAVK
   }
 
-  getMaxSubthemes(){
+  getMaxSubthemes() {
     return this.maxSubThemes
   }
-  getMaxThemes(){
+  getMaxThemes() {
     return this.maxThemes
   }
-  getMods(){
+  getMods() {
     return this.modList
   }
 
-  getThemes(){
+  getThemes() {
     return this.themeList
   }
 }

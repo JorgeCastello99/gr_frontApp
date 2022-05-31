@@ -85,7 +85,7 @@ import { UserhandlerComponent } from './components/userhandler/userhandler.compo
     CryptoService,
     JwtHelperService,
     CookieService,
-    {provide: BUCKET, useValue:'gs://growthroad-bb7ac.appspot.com/'},],
+  { provide: BUCKET, useValue: 'gs://growthroad-bb7ac.appspot.com/' },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

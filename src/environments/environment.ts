@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //apiUrl: 'https://grapi.growthroad.es:5555',
-  apiUrl: 'http://localhost:3000',
+  apiUrl: 'http://localhost:4201',
   secretKey: 'SdgyR3gqrsamrbmOfD0neipEKWa1QquE',
   firebaseConfig: {
     apiKey: "AIzaSyB1Qa6YBBTSp1VaJPEUH2jjE4yku742UmM",

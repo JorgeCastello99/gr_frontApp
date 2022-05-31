@@ -13,7 +13,7 @@ export class ScriptsService {
   constructor(private httpClient: HttpClient) { }
 
   exeScriptAnswers(script: Script): Observable<any> {
-    return this.httpClient.put(`${environment.apiUrl}/exe/answers`,script).pipe(
+    return this.httpClient.put(`${environment.apiUrl}/exe/answers`, script).pipe(
       catchError(error => {
         return throwError(error);
       })
@@ -28,13 +28,14 @@ export class ScriptsService {
   //   )
   // }
 
-exeScriptReport(idUser: any, userName: any): any {
-
-  const params = { idUser: idUser, userName: userName}
-  return this.httpClient.get(`${environment.apiUrl}/exe/report`, {params: params, responseType  : 'arraybuffer' as 'json'}).pipe(
-
-  )
-}
+  exeScriptReport(idUser: any, userName: any): any {
+    const body = {
+      idUser: idUser, userName: userName, responseType: 'arraybuffer' as 'json'
+    }
+    const params = { idUser: idUser, userName: userName }
+    return this.httpClient.put(`${environment.apiUrl}/exe/report`, body).pipe()
+    // return this.httpClient.get(`${environment.apiUrl}/exe/report`, { params: params, responseType: 'arraybuffer' as 'json' }).pipe()
+  }
 
 }
 // }

@@ -98,7 +98,7 @@ export class VocationComponent implements OnInit {
         console.log(this.arrayProgressS);
         console.log(this.arrayProgressSTotal);
       },
-      (error) => {}
+      (error) => { }
     );
   }
 }

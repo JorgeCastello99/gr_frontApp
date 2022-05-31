@@ -1,4 +1,5 @@
 <div class="container">
+  <!--? Loaders -->
   <div class="onloading" [ngStyle]="{'display': onLoadingReport ? 'flex' : 'none'}">
     <div class="loader"></div>
     <p>Generando PDF....</p>
@@ -8,14 +9,14 @@
     <p>Guardando....</p>
   </div>
 
+  <!--? Encabezado -->
   <h4>Capítulo {{numMod}}: {{modName}}</h4>
   <hr
     style="border:1px;background-color:#8e8e8e88;color:#9d9d9d;height:1px;width:40%;margin-left: auto;margin-right: auto;" />
 
   <div class="ccontainer">
-
+    <!--? Vocation drawer -->
     <div class="left-container">
-
       <div class="sub-container">
         <div class="btn-container">
 
@@ -56,15 +57,22 @@
         </ul>
       </div>
     </div>
+
+    <!--? Vocation content -->
     <div class="right-container"
       [ngStyle]="{'width': themeToggled ? '87%' : '70%','margin-top': themeToggled ? '5px' : '0','position': themeToggled ? 'absolute' : 'relative','top': themeToggled ? 'absolute' : 'relative'}">
       <div class="l-container">
+
+        <!--? Callback - Capitulo incompleto  -->
         <div *ngIf="blockTheme" class="block-theme">
           <p class="tit">No tan rápido...</p>
           <img src="https://grapi.growthroad.es:5555/img?imgRef=homer&ext=gif" alt="">
           <p class="text">Tienes que terminar las actividades anteriores para acceder a esta.</p>
         </div>
+
+        <!--? Contenido -->
         <div class="pad-container" [ngStyle]="{'opacity': blockTheme ? '0':'1'}">
+          <!--? Video -->
           <div class="sb-video-container">
             <video poster="https://grapi.growthroad.es:5555/img?imgRef={{videoUrl}}&ext=png"
               class="video-js vjs-default-skin" controls preload="auto" id=videosb>
@@ -73,6 +81,8 @@
               </p>
             </video>
           </div>
+
+          <!--? Callback - Video completado -->
           <div *ngIf="blockCompleted" class="block-completed">
             <div class="img-container">
               <img src="https://grapi.growthroad.es:5555/img?imgRef=completed&ext=png" alt="">
@@ -96,13 +106,22 @@
             <p style="text-align: center;" *ngIf="numThemeActive==5 && numSubthemeActive==3 && user.license == 'B'">Fin
               de la prueba sin costo.</p>
           </div>
+
+          <!--? Actividades -->
           <div class="activities" *ngIf="!blockCompleted && !blockTheme && !blockSubtheme">
             <div class="activity">
+              <!--? Actividad -->
               <div class="activity-container">
+
+                <!--? Cabecera -->
                 <p>Reto {{activity.numActivity}}</p>
+
+                <!--? Enunciado -->
                 <div class="question" id="question">
                   <p [innerHtml]="activity.nameActivity"></p>
                 </div>
+
+                <!--? Callback - Actividad terminada -->
                 <div *ngIf="activity.ref.length !== 0" class="ref-ans">
                   <button *ngIf="generatedLink" (click)="generateRefAns()">Refrescar respuestas anteriores</button>
                   <div class="ref-option" *ngIf="refShow">
@@ -110,6 +129,8 @@
                     <p *ngFor="let item of answerRef">- {{item}}</p>
                   </div>
                 </div>
+
+                <!--? ??  -->
                 <div class="option" [ngSwitch]="activity.activityType">
                   <!-- Texto -->
                   <div class="texto" *ngSwitchCase="'Texto'">
@@ -117,10 +138,12 @@
                       src="https://grapi.growthroad.es:5555/img?imgRef={{activity.media}}&ext=png" alt="">
                     <textarea [(ngModel)]="texto"></textarea>
                   </div>
+
                   <!-- Video -->
                   <div class="videoa" *ngSwitchCase="'Video'">
                     <div class="sb-video-container">
-                      <video preload="auto" class="video-js vjs-default-skin" controls  poster="https://grapi.growthroad.es:5555/img?imgRef={{activity.media}}&ext=png" id=videonormal>
+                      <video preload="auto" class="video-js vjs-default-skin" controls
+                        poster="https://grapi.growthroad.es:5555/img?imgRef={{activity.media}}&ext=png" id=videonormal>
                         <p>
                           Your browser doesn't support HTML5 video.
                         </p>
@@ -128,10 +151,12 @@
                     </div>
                     <button (click)="refreshVideo(1)">Ver Vídeo</button>
                   </div>
+
                   <!-- VideoRate -->
                   <div class="videorate" *ngSwitchCase="'VideoRate'">
                     <div class="sb-video-container">
-                      <video preload="auto" class="video-js vjs-default-skin" controls id=videorate poster="https://grapi.growthroad.es:5555/img?imgRef={{activity.media}}&ext=png">
+                      <video preload="auto" class="video-js vjs-default-skin" controls id=videorate
+                        poster="https://grapi.growthroad.es:5555/img?imgRef={{activity.media}}&ext=png">
                         <p>
                           Your browser doesn't support HTML5 video.
                         </p>
@@ -146,11 +171,13 @@
                       <output></output>
                     </div>
                   </div>
+
                   <!-- VideoCheck -->
                   <div class="videocheck" *ngSwitchCase="'VideoCheck'">
                     <input type="checkbox" name="" id="" [(ngModel)]="videoSeen">
                     <p>¿Has vísto el video?</p>
                   </div>
+
                   <!-- Parameters -->
                   <div class="parameters" *ngSwitchCase="'Parameters'" [ngSwitch]="activity.answers[0]">
                     <!-- caso parameters avk -->
@@ -167,9 +194,11 @@
                       </div>
                     </div>
                   </div>
+
                   <!-- Enunciado -->
                   <div *ngSwitchCase="'Enunciado'">
                   </div>
+
                   <!-- Johari -->
                   <div class="johari" *ngSwitchCase="'Johari'">
                     <button *ngIf="generatedLink" (click)="generateLinkJohari()">Generar link</button>
@@ -180,6 +209,7 @@
                     </div>
 
                   </div>
+
                   <!-- Interaccion -->
                   <div class="inter" *ngSwitchCase="'Interaction'">
                     <button *ngIf="generatedLink" (click)="generateInteraction(activity.answers[0])">Generar
@@ -187,9 +217,8 @@
                     <div *ngIf="interactionShow" class="container-interaction">
                       <p *ngFor="let item of interactionResult">{{item}}</p>
                     </div>
-
-
                   </div>
+
                   <!-- Seleccionador -->
                   <div class="selection" *ngSwitchCase="'Seleccionador'">
                     <div class="cbox" *ngFor="let ans of activity.answers; index as i">
@@ -200,6 +229,7 @@
                       </label>
                     </div>
                   </div>
+
                   <!-- Seleccionador -->
                   <div class="selectionv2" *ngSwitchCase="'Seleccionadorv2'">
                     <div class="cbox" *ngFor="let ans of activity.answers; index as i">
@@ -210,6 +240,7 @@
                       </label>
                     </div>
                   </div>
+
                   <!-- lista -->
                   <div class="lista" *ngSwitchCase="'Lista'">
                     <div class="inp-list">
@@ -225,11 +256,13 @@
                       </div>
                     </div>
                   </div>
+
                   <!-- Feedback -->
                   <div class="fb" *ngSwitchCase="'Feedback'">
                     <textarea [(ngModel)]="fbTexto"></textarea>
                     <p>Esta pregunta es de feedback para nosotros, y se almacena anónimamente para su uso.</p>
                   </div>
+
                   <!-- Valoracion -->
                   <div class="valor" *ngSwitchCase="'Valoracion'">
                     <div class="vbox" *ngFor="let ans of activity.answers; index as i">
@@ -243,15 +276,18 @@
                     </div>
                   </div>
                 </div>
+
+                <!--? Errors  -->
                 <div class="error" *ngIf="cardError">
                   {{cardError}}
                 </div>
               </div>
-              <div class="progressact-container">
 
+              <!--  -->
+              <div class="progressact-container">
+                <!--? Barra de progreso -->
                 <div class="progress-baract">
                   <div class="bar">
-
                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
                       aria-valuemin="0" aria-valuemax="100"
                       style="height: 30px; border-radius: 100px; background-color: rgb(14, 165, 112);"
@@ -260,9 +296,8 @@
                   <div class="numact">{{numActivity+1}}/{{activitiesList.length}}</div>
                 </div>
 
+                <!--? Botonera -->
                 <div class="btn-container">
-
-
                   <button (click)="onActBack(activity.activityType)" *ngIf="numActivity > 0">Atrás</button>
                   <button (click)="onActNext(activity.activityType)"
                     *ngIf="numActivity < activitiesList.length-1 && !last">Siguiente</button>
@@ -270,19 +305,12 @@
                     *ngIf="numActivity == activitiesList.length-1 && !last && !saving">Guardar</button>
                 </div>
               </div>
-
-
-
             </div>
           </div>
         </div>
-
       </div>
-
-
     </div>
   </div>
-
 </div>
 <!--
 <ng-template #content let-c="close" let-d="dismiss">

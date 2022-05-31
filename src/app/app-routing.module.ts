@@ -21,30 +21,36 @@ import { ProgressComponent } from './components/progress/progress.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
-  { path: "platform", component: UserhandlerComponent,  canActivate: [AuthGuardService], children: [
-    //Alumnos
-    { path: "home", component: MenuComponent, canActivate: [AuthGuardService],  children: [
-      { path: "", component: HomeComponent, canActivate: [AuthGuardService]  },
-      { path: "profile", component: ProfileComponent, canActivate: [AuthGuardService]  },
-      { path: "progress", component: ProgressComponent, canActivate: [AuthGuardService]  },
+  {
+    path: "platform", component: UserhandlerComponent, canActivate: [AuthGuardService], children: [
+      //? Drawer para Alumnos
       {
-        path: "orientation", component: OrientationComponent, canActivate: [AuthGuardService], children: [
-          { path: "vocation", component: VocationComponent, canActivate: [AuthGuardService] },
-          { path: "experience", component: ExperienceComponent, canActivate: [AuthGuardService]  },
-          { path: "profesion", component: ProfesionComponent, canActivate: [AuthGuardService] }
+        path: "home", component: MenuComponent, canActivate: [AuthGuardService], children: [
+          { path: "", component: HomeComponent, canActivate: [AuthGuardService] },
+          { path: "profile", component: ProfileComponent, canActivate: [AuthGuardService] },
+          { path: "progress", component: ProgressComponent, canActivate: [AuthGuardService] },
+          {
+            path: "orientation", component: OrientationComponent, canActivate: [AuthGuardService], children: [
+              { path: "vocation", component: VocationComponent, canActivate: [AuthGuardService] },
+              { path: "experience", component: ExperienceComponent, canActivate: [AuthGuardService] },
+              { path: "profesion", component: ProfesionComponent, canActivate: [AuthGuardService] }
+            ]
+          },
+          {
+            path: "orientation/vocation/:id", canActivate: [AuthGuardService], component: ModComponent,
+          },
+
+          { path: "vcoach", component: VcoachComponent, canActivate: [AuthGuardService] }
         ]
       },
+      //? Drawer para Profesores
       {
-        path: "orientation/vocation/:id", canActivate: [AuthGuardService], component: ModComponent,
+        path: "teachers", component: TeachersComponent, canActivate: [AuthGuardService], children: [
+          { path: "student/:id", component: StudentprofileComponent, canActivate: [AuthGuardService] },
+        ]
       },
-
-      {path: "vcoach", component: VcoachComponent, canActivate: [AuthGuardService]}
     ]
   },
-  { path: "teachers", component: TeachersComponent, canActivate: [AuthGuardService],children: [
-    { path: "student/:id", component: StudentprofileComponent,  canActivate: [AuthGuardService]},
-  ] },
-  ]},
   { path: "pwd", component: PwdresetComponent },
   { path: "interaction", component: InteractionComponent },
   { path: "**", component: ErrorComponent, },

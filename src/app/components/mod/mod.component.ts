@@ -121,6 +121,7 @@ export class ModComponent implements OnInit, OnDestroy {
   ) {
 
   }
+
   ngOnDestroy(): void {
     this.player.dispose()
     if (this.playerv) {
@@ -130,10 +131,12 @@ export class ModComponent implements OnInit, OnDestroy {
       this.playervrate.dispose()
     }
   }
+
   //Metodos para toggle temas
   toggleThemes() {
     this.themeToggled = !this.themeToggled
   }
+
   ngOnInit(): void {
     this.finS = this.datModService.getMaxSubthemes()
     this.finT = this.datModService.getMaxThemes()
@@ -149,19 +152,20 @@ export class ModComponent implements OnInit, OnDestroy {
     })
 
   }
+
   //PDF
   generateReport() {
     this.onLoadingReport = true
     window.scroll(0, 0)
     this.scriptService.exeScriptReport(this.idUserL, this.userName).subscribe((data: any) => {
+      console.debug('GENERATEREPORT', data)
       let file = new Blob([data], { type: 'application/pdf' });
       var fileURL = URL.createObjectURL(file);
       window.open(fileURL);
       this.onLoadingReport = false
     })
-
-
   }
+
   modData() {
     const num = parseInt(this.numMod)
     if (num > 1 && this.licenciaid == "B") {
@@ -171,11 +175,13 @@ export class ModComponent implements OnInit, OnDestroy {
     this.modName = this.modList[num - 1].name
     this.themeData()
   }
+
   themeData() {
     this.allThemeList = this.datModService.getThemes()
     this.themeList = this.allThemeList[parseInt(this.numMod) - 1]
     this.onChangeTheme(this.numThemeActive)
   }
+
   onChangeTheme(nT: any) {
     this.generatedLink = true
     this.completed = []
@@ -192,6 +198,7 @@ export class ModComponent implements OnInit, OnDestroy {
     this.numSubthemeActive = 1
     this.subthemeData(this.numThemeActive)
   }
+
   async takeRespondMT(m: any, t: any) {
     if (t == 1) {
       this.blockTheme = false
@@ -215,6 +222,7 @@ export class ModComponent implements OnInit, OnDestroy {
       })
     }
   }
+
   subthemeData(nT: any) {
     this.subthemeService.getSubthemes(this.numMod, nT).subscribe(async (data: any) => {
       this.subthemesList = data
@@ -226,6 +234,7 @@ export class ModComponent implements OnInit, OnDestroy {
         //CONTROLAR ERROR
       })
   }
+
   async onChangeSubtheme(nS: any) {
     this.generatedLink = true
     await this.takeRespondMT(parseInt(this.numMod), this.numThemeActive)
@@ -272,6 +281,7 @@ export class ModComponent implements OnInit, OnDestroy {
     this.player.load()
     this.activityData(this.numSubthemeActive)
   }
+
   async activityData(nS: any) {
     this.numActivity = 0
     this.activitiesList = this.subthemesList[nS - 1].activities
@@ -289,6 +299,7 @@ export class ModComponent implements OnInit, OnDestroy {
       this.numActivity = -1
     }
   }
+
   revise() {
     let showvideo = false
     let showvideorate = false
@@ -362,6 +373,7 @@ export class ModComponent implements OnInit, OnDestroy {
     this.blockCompleted = false
     this.last = false
   }
+
   continueAct() {
     this.generatedLink = true
     window.scroll(0, 0)
@@ -389,6 +401,7 @@ export class ModComponent implements OnInit, OnDestroy {
     this.itemList = ""
     this.listItemsLista = []
   }
+
   takeRespondsMTS(m: any, t: any, s: any) {
     let showvideo = false
     let showvideorate = false
@@ -477,6 +490,7 @@ export class ModComponent implements OnInit, OnDestroy {
       }, 2500);
     }
   }
+
   onBack() {
     this.router.navigateByUrl("/platform/home/orientation/vocation")
     if (this.player) {
@@ -489,6 +503,7 @@ export class ModComponent implements OnInit, OnDestroy {
       this.playervrate.dispose()
     }
   }
+
   //Métodos para referencias
   generateRefAns() {
     this.generatedLink = false
@@ -532,6 +547,7 @@ export class ModComponent implements OnInit, OnDestroy {
     })
     this.refShow = true
   }
+
   //Métodos para johari
   copyLink() {
     this.clipboardApi.copyFromContent(this.uriInteraction)
@@ -540,6 +556,7 @@ export class ModComponent implements OnInit, OnDestroy {
       this.copiedLink = false
     }, 1000);
   }
+
   generateLinkJohari() {
     //aplicar el tema y subtema que toque
     this.interactionService.checkInteraction(this.idUserL).subscribe(d => {
@@ -605,6 +622,7 @@ export class ModComponent implements OnInit, OnDestroy {
       })
     })
   }
+
   //Métodos para parameters
   generateParameters(tipe: String) {
     this.parametersService.getUserParameters(this.idUserL).subscribe(data => {
@@ -692,6 +710,7 @@ export class ModComponent implements OnInit, OnDestroy {
     })
 
   }
+
   //Métodos para la lista
   addItemToList() {
     if (this.listItemsLista.length >= this.activity.limit) {
@@ -712,6 +731,7 @@ export class ModComponent implements OnInit, OnDestroy {
       }
     }
   }
+
   deleteItemList(item: any) {
     this.listItemsLista = this.listItemsLista.filter(d => d !== item)
   }
@@ -719,6 +739,7 @@ export class ModComponent implements OnInit, OnDestroy {
   onChangeVal(event: any, pos: any) {
     this.answer[pos - 1] = event.target.value
   }
+
   onCheckVal(num: any) {
     return this.answer[num]
   }
@@ -731,6 +752,7 @@ export class ModComponent implements OnInit, OnDestroy {
       this.answer.splice(numDelete, 1)
     }
   }
+
   isChecked(num: any) {
     if (this.answer.find(data => data == num)) {
       return true
@@ -863,6 +885,7 @@ export class ModComponent implements OnInit, OnDestroy {
       }, 2500);
     }
   }
+
   onActNext(activityType: any) {
     let showvideo = false
     let showvideorate = false
@@ -1040,6 +1063,7 @@ export class ModComponent implements OnInit, OnDestroy {
       }, 2500);
     }
   }
+
   onSave(activityType: any) {
     let ns = this.numSubthemeActive
     let nt = this.numThemeActive
@@ -1238,8 +1262,6 @@ export class ModComponent implements OnInit, OnDestroy {
       this.playervrate.play()
     }
   }
-
-
 }
 
 //Pantallita de guardado

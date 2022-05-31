@@ -5,7 +5,4 @@ export class UserAnswer {
   numSubtheme?: Number;
   idUser?: string;
   respond?: any;
-
-
-
 }

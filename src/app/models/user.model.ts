@@ -7,6 +7,4 @@ export class User {
   role?: string;
   grade?: string;
   license?: string;
-
-
 }

@@ -28,11 +28,11 @@
               <p>Información personal</p>
               <span>Configura tu nombres y apellidos</span>
             </div>
-            <span class="arrow">></span>
+            <span class="arrow">&rsaquo;</span>
           </div>
           <div class="upd-config" [ngClass]="{'anim': animUpdName}">
             <div class="quit-anim" (click)="removeAnim(1)">
-              < </div>
+             &lsaquo;</div>
                 <div class="names">
                   <input type="text" maxlength="20" [placeholder]="userName" [(ngModel)]="upName">
                   <input type="text" maxlength="30" [placeholder]="userSurName" [(ngModel)]="upSurName">
@@ -49,10 +49,10 @@
                 <p>Información de la cuenta</p>
                 <span>Configura tu email</span>
               </div>
-              <span class="arrow">></span>
+              <span class="arrow">&rsaquo;</span>
             </div>
             <div class="upd-config" [ngClass]="{'anim': animUpdEm}">
-              <div class="quit-anim" (click)="removeAnim(2)"> < </div>
+              <div class="quit-anim" (click)="removeAnim(2)">&lsaquo;</div>
               <div class="fix">
                 <div class="pw-cont">
                   <input [ngStyle]="{'display': showPwdCheckk}" type="email" autocomplete="off" placeholder="{{userEmail}}" [(ngModel)]="upEmail">
@@ -73,11 +73,11 @@
                   <p>Información de la seguridad</p>
                   <span>Configura tu contraseña</span>
                 </div>
-                <span class="arrow">></span>
+                <span class="arrow">&rsaquo;</span>
               </div>
               <div class="upd-config" [ngClass]="{'anim': animUpdPw}">
                 <div class="quit-anim" (click)="removeAnim(3)">
-                  < </div>
+                 &lsaquo;</div>
                     <div class="fix">
                       <div class="pw-cont">
                         <input type="password" autocomplete="new-password" [(ngModel)]="upPwdOld"
@@ -99,10 +99,10 @@
                     <p>Información de afiliación</p>
                     <span>Configura tu afiliación a tu colegio o instituto.</span>
                   </div>
-                  <span class="arrow">></span>
+                  <span class="arrow">&rsaquo;</span>
                 </div>
                 <div class="upd-config" [ngClass]="{'anim': animUpdSc}">
-                  <div class="quit-anim" (click)="removeAnim(4)"><</div>
+                  <div class="quit-anim" (click)="removeAnim(4)">&lsaquo;</div>
                     <div class="fix">
                       <div class="pw-cont">
                         <input  type="text" autocomplete="off" placeholder="Escribe el código de afiliación" [(ngModel)]="codeSchool">

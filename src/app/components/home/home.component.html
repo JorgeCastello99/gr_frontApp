@@ -1,4 +1,5 @@
 <div class="container" #containerWindow>
+
   <div class="account">
     <!-- <div class="noti">
       <img src="../../../assets/img/notis.svg" alt="">
@@ -32,15 +33,10 @@
         <p class="tet">Mi progreso</p>
         <div class="circle">
           <circle-progress [percent]="prog" [radius]="40" [outerStrokeWidth]="6" [innerStrokeWidth]="0"
-            [outerStrokeColor]="'#bb00ff'"
-            [outerStrokeGradient]=true
-            [outerStrokeGradientStopColor]="'#ff00d4'"
-            [titleColor]="'#ff00d4'"
-            [unitsColor]="'#ff00d4'"
-            [titleFontWeight]="'700'"
-            [unitsFontWeight]="'700'"
-            [responsive]=true [showSubtitle]=false [unitsFontSize]="'12'"
-            [titleFontSize]="'20'" [animation]="true" [animationDuration]="300"></circle-progress>
+            [outerStrokeColor]="'#bb00ff'" [outerStrokeGradient]=true [outerStrokeGradientStopColor]="'#ff00d4'"
+            [titleColor]="'#ff00d4'" [unitsColor]="'#ff00d4'" [titleFontWeight]="'700'" [unitsFontWeight]="'700'"
+            [responsive]=true [showSubtitle]=false [unitsFontSize]="'12'" [titleFontSize]="'20'" [animation]="true"
+            [animationDuration]="300"></circle-progress>
         </div>
         <p>{{progressText}}</p>
         <button (click)="onOrientation()" class="orient-respons">Ir a orientación</button>
@@ -51,8 +47,8 @@
         <div class="grafcont">
           <div class="grafr">
             <p>Tus Intereses Vocacionales</p>
-            <canvas baseChart [colors]="radarChartColors" [datasets]="radarChartData" [options]="radarChartOptions" [labels]="radarChartLabels"
-              [chartType]="radarChartType">
+            <canvas baseChart [colors]="radarChartColors" [datasets]="radarChartData" [options]="radarChartOptions"
+              [labels]="radarChartLabels" [chartType]="radarChartType">
             </canvas>
           </div>
           <div class="grafd">
@@ -95,15 +91,15 @@
   <div class="rowcontinuar">
     <p class="tit">Continuar viendo</p>
     <div class="btn-pn">
-      <div class="btnc prev" (click)="btnPrevCar()"><</div>
-      <div  class="btnc next" (click)="btnNextCar()">>
-     </div>
+      <div class="btnc prev" (click)="btnPrevCar()">&lsaquo;</div>
+      <div class="btnc next" (click)="btnNextCar()">&rsaquo;</div>
     </div>
     <div class="carrusel">
 
 
       <div class="carrusel-elemento" *ngFor="let mod of modLS">
-        <div [routerLink]="['/platform/home/orientation/vocation/',mod.num]" class="card" [ngStyle]="{'background-image': 'url('+imagenArray[mod.num-1]+')'}">
+        <div [routerLink]="['/platform/home/orientation/vocation/',mod.num]" class="card"
+          [ngStyle]="{'background-image': 'url('+imagenArray[mod.num-1]+')'}">
           <div class="body-container">
             <div class="tit-container">
               <p class="titt">Capítulo: {{mod.num}}</p>
@@ -111,10 +107,10 @@
             </div>
             <div class="circle">
               <circle-progress [backgroundColor]="'#ffffff41'" [unitsColor]="'#ffffff'" [backgroundPadding]="-4"
-                [toFixed]="0" [percent]="mod.perc" [radius]="20" [outerStrokeWidth]="3" [innerStrokeWidth]="1" [space]="0"
-                [outerStrokeColor]="'#ffffff'" [innerStrokeColor]="'#ffffff'" [responsive]=true [showSubtitle]=false
-                [unitsFontSize]="'8'" [titleFontSize]="'8'" [animation]="true" [titleColor]="'#ffffff'"
-                [animationDuration]="300"></circle-progress>
+                [toFixed]="0" [percent]="mod.perc" [radius]="20" [outerStrokeWidth]="3" [innerStrokeWidth]="1"
+                [space]="0" [outerStrokeColor]="'#ffffff'" [innerStrokeColor]="'#ffffff'" [responsive]=true
+                [showSubtitle]=false [unitsFontSize]="'8'" [titleFontSize]="'8'" [animation]="true"
+                [titleColor]="'#ffffff'" [animationDuration]="300"></circle-progress>
             </div>
             <div class="texts">
               <p class="t">{{userProgressT[mod.num-1]}}/{{finT[mod.num-1]}} Temas</p>
