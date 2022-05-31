@@ -7,13 +7,14 @@
         <h3>Inicia sesión en Growthroad</h3>
         <div class="login-cred">
           <div class="cred-marg">
-            <div class="user" >
-              <input placeholder="Correo electrónico" class="inpcred" type="text"[(ngModel)]="uname">
+            <div class="user">
+              <input placeholder="Correo electrónico" class="inpcred" type="text" [(ngModel)]="uname">
             </div>
             <div class="passw">
 
               <div class="pcont">
-                <input placeholder="Contraseña" class="inpcred" [type]="showPass ? 'text' : 'password'" [(ngModel)]="pword">
+                <input placeholder="Contraseña" class="inpcred" [type]="showPass ? 'text' : 'password'"
+                  [(ngModel)]="pword">
                 <button (click)="onTogglePass()">
                   <img src="https://grapi.growthroad.es:5555/img?imgRef=eye&ext=png" alt="">
                 </button>
@@ -26,12 +27,13 @@
                 <input style="height: 15px;" type="checkbox" [(ngModel)]="remember"> <label
                 for="rememberMe">Recuérdame</label>
               </div> -->
-                <div class="password">
-                  <span [routerLink]="['/pwd']">¿Has olvidado tu contraseña?</span>
-                </div>
+              <div class="password">
+                <span [routerLink]="['/pwd']">¿Has olvidado tu contraseña?</span>
+              </div>
             </div>
             <button (click)="onLogin()">Iniciar Sesión</button>
-            <p class="new"> <a href="https://www.growthroad.es/#/register">¿No tienes una cuenta en Growthroad? <span>Regístrate.</span></a></p>
+            <p class="new"> <a href="https://www.growthroad.es/#/register">¿No tienes una cuenta en Growthroad?
+                <span>Regístrate.</span></a></p>
 
           </div>
         </div>
