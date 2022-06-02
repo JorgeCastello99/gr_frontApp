@@ -54,10 +54,10 @@ export class ProgressComponent implements OnInit {
     // radarChartOptionsIv
     // polarChartOptionsIe
     // barChartOptionsEa
-    if (this.barChartOptionsEa.scales &&  this.polarChartOptionsIe.legend && this.dougOptionsAp.legend && this.dougOptionsiM.legend && this.radarChartOptionsPe.scale && this.radarChartOptionsIv.scale) {
+    if (this.barChartOptionsEa.scales && this.polarChartOptionsIe.legend && this.dougOptionsAp.legend && this.dougOptionsiM.legend && this.radarChartOptionsPe.scale && this.radarChartOptionsIv.scale) {
       if (this.barChartOptionsEa.scales.yAxes && this.barChartOptionsEa.scales.xAxes && this.barChartOptionsEa.scales.yAxes[0].ticks && this.barChartOptionsEa.scales.xAxes[0].ticks && this.polarChartOptionsIe.legend.labels && this.dougOptionsAp.legend.labels && this.dougOptionsiM.legend.labels && this.radarChartOptionsPe.scale.pointLabels && this.radarChartOptionsIv.scale.pointLabels) {
         if (window.innerWidth >= 1292) {
-          this.dougOptionsAp.legend.labels.fontSize = 10
+          this.dougOptionsAp.legend.labels.fontSize = 12
           this.dougOptionsiM.legend.labels.fontSize = 10
           this.radarChartOptionsPe.scale.pointLabels.fontSize = 10
           this.radarChartOptionsIv.scale.pointLabels.fontSize = 10
@@ -334,7 +334,7 @@ export class ProgressComponent implements OnInit {
       xAxes: [{
         ticks: {
           fontSize: 0
-      },
+        },
         gridLines: {
           display: false
         },
@@ -424,12 +424,14 @@ export class ProgressComponent implements OnInit {
       }
     }, error => {
     })
+
     this.doughnutChartLabelsAp = this.dataModService.getParamProf()
     this.radarChartLabelsPe = this.dataModService.getParamsPer()
     this.radarChartLabelsIv = this.dataModService.getParamVoc()
     this.doughnutChartLabelsiM = this.dataModService.getParamIntem()
     this.polarAreaChartLabelsIe = this.dataModService.getParamsInteE()
     this.barChartLabelsEa = this.dataModService.getParamsEstApr()
+
     this.userParameterService.getUserParameters(this.idUserL).subscribe(result => {
       console.log(result.values)
       this.polarAreaChartDataIe = result.values.slice(47, 53)
@@ -438,8 +440,6 @@ export class ProgressComponent implements OnInit {
       this.radarChartDataPe[0].data = result.values.slice(12, 21)
       this.doughnutChartDataiM[0].data = result.values.slice(32, 40)
       this.doughnutChartDataAp[0].data = result.values.slice(5, 12)
-
-
     })
   }
 

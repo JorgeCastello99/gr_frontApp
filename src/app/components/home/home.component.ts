@@ -165,6 +165,7 @@ export class HomeComponent implements OnInit {
     this.generateFontSizeGraphs()
   }
   ngOnInit(): void {
+
     console.log("1")
     const token = this.cookieService.get('token');
     const decoded = this.jwthelper.decodeToken(token);
@@ -233,10 +234,10 @@ export class HomeComponent implements OnInit {
         this.modList2[i].perc += this.numb[i]
       }
 
-      for(var i=0; i< this.modList2.length;i++){
-        if(this.modList2[i].perc==100){
+      for (var i = 0; i < this.modList2.length; i++) {
+        if (this.modList2[i].perc == 100) {
           this.modList3.push(this.modList2[i])
-          this.modList2.splice(i,1)
+          this.modList2.splice(i, 1)
           i--
         }
       }

@@ -51,7 +51,7 @@ export class ModComponent implements OnInit, OnDestroy {
   //Actividad actual
   activity: any
   //Numero de actividad activo
-  numActivity = 0
+  numActivity: number;
   finT: any;
   finS: any;
   //Actividad lista
@@ -120,6 +120,8 @@ export class ModComponent implements OnInit, OnDestroy {
     public ngzone: NgZone,
   ) {
 
+    this.numActivity = 0
+
   }
 
   ngOnDestroy(): void {
@@ -158,7 +160,6 @@ export class ModComponent implements OnInit, OnDestroy {
     this.onLoadingReport = true
     window.scroll(0, 0)
     this.scriptService.exeScriptReport(this.idUserL, this.userName).subscribe((data: any) => {
-      console.debug('GENERATEREPORT', data)
       let file = new Blob([data], { type: 'application/pdf' });
       var fileURL = URL.createObjectURL(file);
       window.open(fileURL);

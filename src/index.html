@@ -1,52 +1,71 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <title>Growthroad</title>
   <base href="/">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- http://localhost:4201/subthemes/mod/theme?module=3&theme=9 -->
   <link rel="icon" type="image/x-icon" href="https://grapi.growthroad.es:5555/img?imgRef=gr-alone&ext=png">
   <style>
-    body{
+    body {
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    app-root{
+
+    app-root {
       width: 100%;
       max-width: 100%;
     }
+
     .loader {
-     position: absolute;
-     top: 50%;
-     bottom: 50%;
-     left: 50%;
-     right: 50%;
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+      left: 50%;
+      right: 50%;
       border: 16px solid #f3f3f3;
       border-radius: 50%;
       border-top: 16px solid #63009d;
       width: 120px;
       height: 120px;
-      -webkit-animation: spin 2s linear infinite; /* Safari */
+      -webkit-animation: spin 2s linear infinite;
+      /* Safari */
       animation: spin 2s linear infinite;
     }
+
     /* Safari */
     @-webkit-keyframes spin {
-      0% { -webkit-transform: rotate(0deg); }
-      100% { -webkit-transform: rotate(360deg); }
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
     }
+
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
-    </style>
+  </style>
 </head>
+
 <body>
 
-    <app-root>
-        <div class="loader"></div>
-    </app-root>
+  <app-root>
+    <div class="loader"></div>
+  </app-root>
 
 </body>
+
 </html>

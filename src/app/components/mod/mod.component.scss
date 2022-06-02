@@ -239,6 +239,7 @@
       top            : 0;
       right          : 0;
       left           : 0;
+      height         : max-content;
 
       .l-container {
         width           : 100%;
@@ -987,7 +988,6 @@
   }
 }
 
-// FRED
 .container {
   .pad-container {
 
@@ -996,7 +996,9 @@
       flex     : 0 1 auto;
 
       .video-js {
-        width: 100%;
+        width    : 100%;
+        max-width: 640px;
+        margin   : 0 auto;
       }
     }
   }
@@ -1010,6 +1012,7 @@
 
     .ccontainer {
       .left-container {
+
         .toggle-th {
           img {
             width: 21px;
@@ -1347,7 +1350,6 @@
     }
   }
 }
-
 
 @media (max-width: 720px) {
   .container {
@@ -2535,6 +2537,39 @@
           }
         }
       }
+    }
+  }
+}
+
+
+// Fred fixes
+.container {
+  .ccontainer {}
+
+  @media (max-width: 576px) {
+    .ccontainer {
+      flex-direction     : column;
+      // background-color: coral;
+
+      .left-container {
+        width: auto;
+
+        .sub-container ul li .subthemes .r-container .subthemes .subtheme .anchor .completed {
+          // background-color: #bada55;
+          height: 100%;
+          width : 100px;
+
+          img {
+            width : auto !important; //obligatorio por como esta definido en los estilos base
+            height: 40px;
+          }
+        }
+      }
+
+      .right-container {
+        width: calc(100% - 60px);
+      }
+
     }
   }
 }

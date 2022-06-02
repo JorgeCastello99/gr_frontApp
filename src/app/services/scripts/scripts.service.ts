@@ -33,8 +33,8 @@ export class ScriptsService {
       idUser: idUser, userName: userName, responseType: 'arraybuffer' as 'json'
     }
     const params = { idUser: idUser, userName: userName }
-    return this.httpClient.put(`${environment.apiUrl}/exe/report`, body).pipe()
-    // return this.httpClient.get(`${environment.apiUrl}/exe/report`, { params: params, responseType: 'arraybuffer' as 'json' }).pipe()
+    // return this.httpClient.put(`${environment.apiUrl}/exe/report`, body).pipe()
+    return this.httpClient.get(`${environment.apiUrl}/exe/report`, { params: params, responseType: 'arraybuffer' as 'json' }).pipe()
   }
 
 }

@@ -15,13 +15,12 @@ export class AuthInterceptorService {
 
     let request = req;
     if (token) {
-    request = req.clone({
-    setHeaders: {
-    authorization: `Bearer ${token}`
+      request = req.clone({
+        setHeaders: {
+          authorization: `Bearer ${token}`
+        }
+      });
     }
-    });
-    }
-    console.log(request.url)
     return next.handle(request);
-    }
+  }
 }
